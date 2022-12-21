@@ -20,6 +20,7 @@ permalink: pretty
 # ----------------------- #
 #   3rd Party Settings    #
 # ----------------------- #
+#<a rel="me" href="https://fosstodon.org/@squeamishossifrage">Mastodon</a>
 
 social:
  
@@ -41,3 +42,5 @@ social:
     url: https://pinboard.in/u:systemhalted
   - title: book
     url: https://www.librarycat.org/lib/palakmathur
+  - title: mastodon
+    url: https://fosstodon.org/@squeamishossifrage
