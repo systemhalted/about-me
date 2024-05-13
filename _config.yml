@@ -29,6 +29,7 @@ social:
     type: solid
   - title: podcast
     url: https://podcasts.apple.com/us/podcast/nukkad-shukkad/id1537261609
+    type: solid
   - title: spotify
     url: https://open.spotify.com/show/35GJ2PUl23E4LeFLRuFBl6
     type: brands
