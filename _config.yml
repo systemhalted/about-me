@@ -31,19 +31,19 @@ social:
     url: https://podcasts.apple.com/us/podcast/nukkad-shukkad/id1537261609
   - title: spotify
     url: https://open.spotify.com/show/35GJ2PUl23E4LeFLRuFBl6
-    type: solid
+    type: brands
   - title: github
     url: https://github.com/systemhalted
-    type: solid
+    type: brands
   - title: linkedin
     url: https://www.linkedin.com/in/systemhalted/
-    type: solid
+    type: brands
   - title: twitter
     url: https://twitter.com/palak
-    type: solid
+    type: brands
   - title: instagram
     url: https://www.instagram.com/palak_clicks/
-    type: solid
+    type: brands
   - title: bookmark
     url: https://pinboard.in/u:systemhalted
     type: solid
