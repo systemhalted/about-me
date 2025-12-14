@@ -1,7 +1,3 @@
-# ----------------------- #
-#      Main Configs       #
-# ----------------------- #
-
 url: https://palakmathur.in
 title: Palak Mathur 
 email: insanethoughts@live.com
@@ -9,22 +5,12 @@ author: Palak Mathur
 description: > # Palak Mathur is no more anonymous
 copyright: 'Copyright &copy; 2021 Palak Mathur. All Rights Reserved.'
 
-# ----------------------- #
-#    Jekyll & Plugins     #
-# ----------------------- #
-
-# Build settings
 markdown: kramdown
 permalink: pretty
 
 # Include well-known assets in the built site
 include:
   - .well-known
-
-# ----------------------- #
-#   3rd Party Settings    #
-# ----------------------- #
-#<a rel="me" href="https://fosstodon.org/@squeamishossifrage">Mastodon</a>
 
 social:
  
