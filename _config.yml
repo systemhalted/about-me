@@ -17,6 +17,10 @@ copyright: 'Copyright &copy; 2021 Palak Mathur. All Rights Reserved.'
 markdown: kramdown
 permalink: pretty
 
+# Include well-known assets in the built site
+include:
+  - .well-known
+
 # ----------------------- #
 #   3rd Party Settings    #
 # ----------------------- #
