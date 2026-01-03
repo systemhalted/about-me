@@ -29,6 +29,8 @@ $(function() {
     var lastQuery = '';
     var debounceTimer = null;
     var maxResults = 12;
+    var maxLoadAttempts = 3;
+    var retryDelayMs = 800;
 
     var normalizeText = function(value) {
         return (value || '').toString().toLowerCase().replace(/\s+/g, ' ').trim();
@@ -49,6 +51,12 @@ $(function() {
         return deferred.promise();
     };
 
+    var setLoadingMessage = function(message) {
+        if ($searchLoading.length) {
+            $searchLoading.text(message);
+        }
+    };
+
     var resolveIndex = function() {
         if (indexReady && siteIndex && siteDocs.length) {
             return $.Deferred().resolve().promise();
@@ -65,7 +73,22 @@ $(function() {
             return indexPromise;
         }
 
-        var finalizeIndex = function() {
+        var attemptLoad = function() {};
+
+        var handleFailure = function(attempt) {
+            if (attempt < maxLoadAttempts) {
+                var nextAttempt = attempt + 1;
+                setLoadingMessage('Retrying to load the System Halted index (' + nextAttempt + ' of ' + maxLoadAttempts + ')...');
+                setTimeout(function() {
+                    attemptLoad(nextAttempt);
+                }, retryDelayMs * attempt);
+                return;
+            }
+            indexPromise = null;
+            deferred.reject();
+        };
+
+        var finalizeIndex = function(attempt) {
             try {
                 if (typeof window.ensureSiteIndex === 'function') {
                     window.ensureSiteIndex();
@@ -78,22 +101,28 @@ $(function() {
                 indexReady = true;
                 deferred.resolve();
             } catch (err) {
-                indexPromise = null;
-                deferred.reject();
+                handleFailure(attempt);
             }
         };
 
+        attemptLoad = function(attempt) {
+            var cacheBuster = '?retry=' + attempt + '-' + Date.now();
+            loadScript(baseUrl + '/public/js/webcmd.js' + cacheBuster)
+                .done(function() {
+                    finalizeIndex(attempt);
+                })
+                .fail(function() {
+                    handleFailure(attempt);
+                });
+        };
+
         if (window.siteDocs && window.siteDocs.length) {
-            finalizeIndex();
+            finalizeIndex(1);
             return indexPromise;
         }
 
-        loadScript(baseUrl + '/public/js/webcmd.js')
-            .done(finalizeIndex)
-            .fail(function() {
-                indexPromise = null;
-                deferred.reject();
-            });
+        setLoadingMessage('Loading the System Halted index... this can take a few seconds.');
+        attemptLoad(1);
 
         return indexPromise;
     };
@@ -238,7 +267,7 @@ $(function() {
                 }
                 $searchLoading.addClass('is-hidden');
                 $searchCount.text('Search unavailable.');
-                showError('Search is unavailable right now.');
+                showError('Search could not load the archive index. Please try again in a moment.');
             });
     };
 
