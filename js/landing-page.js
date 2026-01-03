@@ -236,12 +236,14 @@ $(function() {
 
         $searchEmpty.addClass('is-hidden');
         $searchError.addClass('is-hidden');
+        $searchCount.removeClass('is-hidden');
 
         if (!query) {
             $searchLoading.addClass('is-hidden');
             $searchResultsList.empty();
             $searchPlaceholder.removeClass('is-hidden');
-            $searchCount.text('Type to search the archive.');
+            $searchCount.text('');
+            $searchCount.addClass('is-hidden');
             return;
         }
 
