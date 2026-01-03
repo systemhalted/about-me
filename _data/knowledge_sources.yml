@@ -13,15 +13,15 @@ sources:
       - Opinionated essays with references and threads to follow.
   - name: Palak Mathur on Substack
     url: https://palakmathur.substack.com
-    type: Newsletter
-    summary: Shorter dispatches, experiments, and work-in-progress ideas.
+    type: Creative writing
+    summary: Creative writing portfolio featuring essays and narrative work.
     tags:
-      - newsletter
-      - notes
-      - experiments
+      - creative writing
+      - portfolio
+      - essays
     highlights:
-      - Weekly ideas, reflections, and reading notes.
-      - Cross-links to System Halted essays.
+      - Longform creative essays and narrative writing.
+      - Curated portfolio of voice-led work.
   - name: Nukkad Shukkad Podcast
     url: https://podcasts.apple.com/us/podcast/nukkad-shukkad/id1537261609
     type: Podcast
