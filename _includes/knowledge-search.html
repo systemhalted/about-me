@@ -3,16 +3,30 @@
 		<div class="row">
 			<div class="col-lg-10 col-lg-offset-1">
 				<h2>Search the archive</h2>
-				<p class="section-lede">Search the System Halted archive by topic, source, or post.</p>
+				<p class="section-lede">Search System Halted posts alongside my Substack creative writing archive.</p>
 				<div class="search-box">
 					<label class="sr-only" for="knowledge-search">Search the archive</label>
 					<input type="search" id="knowledge-search" class="form-control search-input js-knowledge-search" placeholder="Search topics and posts">
+					<div class="search-filters" role="group" aria-label="Search filters">
+						<span class="search-filter">
+							<input type="radio" id="search-filter-all" name="search-filter" value="all" class="js-search-filter" checked>
+							<label for="search-filter-all">All</label>
+						</span>
+						<span class="search-filter">
+							<input type="radio" id="search-filter-system" name="search-filter" value="system" class="js-search-filter">
+							<label for="search-filter-system">System Halted</label>
+						</span>
+						<span class="search-filter">
+							<input type="radio" id="search-filter-substack" name="search-filter" value="substack" class="js-search-filter">
+							<label for="search-filter-substack">Substack</label>
+						</span>
+					</div>
 					<div class="search-meta" aria-live="polite">
 						<span class="search-count js-search-count is-hidden"></span>
 						<span class="search-empty js-search-empty is-hidden">No matches yet. Try a shorter query.</span>
-						<span class="search-error js-search-error is-hidden">Search could not load the archive index. Please try again in a moment.</span>
+						<span class="search-error js-search-error is-hidden">Some sources could not load. Search results may be incomplete.</span>
 					</div>
-					<p class="search-hint">Try: product strategy, internet culture, reading log.</p>
+					<p class="search-hint">Try: product strategy, internet culture, short story.</p>
 				</div>
 				<div class="search-results search-panel js-search-panel is-hidden">
 					<div class="search-results-list js-search-results-list"></div>

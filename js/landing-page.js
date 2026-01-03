@@ -19,15 +19,27 @@ $(function() {
     var $searchError = $('.js-search-error');
     var $searchPanel = $('.js-search-panel');
     var $searchResultsList = $('.js-search-results-list');
+    var $searchFilters = $('.js-search-filter');
 
     var baseUrl = 'https://systemhalted.in';
+    var substackDocsUrl = 'js/substack-docs.js';
+    var systemSourceLabel = 'System Halted';
+    var substackSourceLabel = 'Substack';
+    var substackBaseUrl = 'https://palakmathur.substack.com';
     var indexReady = false;
     var indexPromise = null;
     var siteIndex = null;
     var siteDocs = [];
     var docsById = {};
     var indexLoadedAt = 0;
+    var substackReady = false;
+    var substackPromise = null;
+    var substackIndex = null;
+    var substackDocs = [];
+    var substackDocsById = {};
+    var substackLoadedAt = 0;
     var lastQuery = '';
+    var lastFilter = 'all';
     var debounceTimer = null;
     var maxResults = 12;
     var maxLoadAttempts = 3;
@@ -36,6 +48,18 @@ $(function() {
 
     var normalizeText = function(value) {
         return (value || '').toString().toLowerCase().replace(/\s+/g, ' ').trim();
+    };
+
+    var getActiveFilter = function() {
+        var $active = $searchFilters.filter(':checked');
+        if (!$active.length) {
+            return 'all';
+        }
+        var value = normalizeText($active.val());
+        if (value === 'system' || value === 'substack' || value === 'all') {
+            return value;
+        }
+        return 'all';
     };
 
     var loadScript = function(src) {
@@ -73,6 +97,36 @@ $(function() {
         indexLoadedAt = 0;
     };
 
+    var isSubstackIndexStale = function() {
+        if (!substackLoadedAt) {
+            return false;
+        }
+        return (Date.now() - substackLoadedAt) > maxIndexAgeMs;
+    };
+
+    var resetSubstackIndex = function() {
+        substackReady = false;
+        substackPromise = null;
+        substackIndex = null;
+        substackDocs = [];
+        substackDocsById = {};
+        substackLoadedAt = 0;
+    };
+
+    var buildSubstackIndex = function(docs) {
+        var index = window.elasticlunr(function() {
+            this.setRef('id');
+            this.addField('title');
+            this.addField('content');
+        });
+        $.each(docs, function(entryIndex, doc) {
+            if (doc && doc.id) {
+                index.addDoc(doc);
+            }
+        });
+        return index;
+    };
+
     var resolveIndex = function() {
         if (indexReady && siteIndex && siteDocs.length) {
             if (isIndexStale()) {
@@ -98,7 +152,7 @@ $(function() {
         var handleFailure = function(attempt) {
             if (attempt < maxLoadAttempts) {
                 var nextAttempt = attempt + 1;
-                setLoadingMessage('Retrying to load the System Halted index (' + nextAttempt + ' of ' + maxLoadAttempts + ')...');
+                setLoadingMessage('Retrying to load the ' + systemSourceLabel + ' index (' + nextAttempt + ' of ' + maxLoadAttempts + ')...');
                 setTimeout(function() {
                     attemptLoad(nextAttempt);
                 }, retryDelayMs * attempt);
@@ -148,13 +202,89 @@ $(function() {
             return indexPromise;
         }
 
-        setLoadingMessage('Loading the System Halted index... this can take a few seconds.');
         attemptLoad(1);
 
         return indexPromise;
     };
 
-    var normalizeLink = function(link) {
+    var resolveSubstackIndex = function() {
+        if (substackReady && substackIndex && substackDocs.length) {
+            if (isSubstackIndexStale()) {
+                resetSubstackIndex();
+            } else {
+                return $.Deferred().resolve().promise();
+            }
+        }
+        if (substackPromise) {
+            return substackPromise;
+        }
+
+        var deferred = $.Deferred();
+        substackPromise = deferred.promise();
+
+        if (typeof window.elasticlunr === 'undefined') {
+            deferred.reject();
+            return substackPromise;
+        }
+
+        var attemptLoad = function() {};
+
+        var handleFailure = function(attempt) {
+            if (attempt < maxLoadAttempts) {
+                var nextAttempt = attempt + 1;
+                setLoadingMessage('Retrying to load the ' + substackSourceLabel + ' feed (' + nextAttempt + ' of ' + maxLoadAttempts + ')...');
+                setTimeout(function() {
+                    attemptLoad(nextAttempt);
+                }, retryDelayMs * attempt);
+                return;
+            }
+            substackPromise = null;
+            deferred.reject();
+        };
+
+        var finalizeSubstack = function(attempt) {
+            try {
+                substackDocs = window.substackDocs || [];
+                if (!substackDocs.length) {
+                    throw new Error('substack docs missing');
+                }
+                substackDocsById = {};
+                $.each(substackDocs, function(index, doc) {
+                    if (doc && doc.id !== null && doc.id !== undefined) {
+                        substackDocsById[String(doc.id)] = doc;
+                    }
+                });
+                substackIndex = buildSubstackIndex(substackDocs);
+                substackReady = true;
+                substackLoadedAt = Date.now();
+                deferred.resolve();
+            } catch (err) {
+                handleFailure(attempt);
+            }
+        };
+
+        attemptLoad = function(attempt) {
+            var cacheBuster = '?retry=' + attempt + '-' + Date.now();
+            loadScript(substackDocsUrl + cacheBuster)
+                .done(function() {
+                    finalizeSubstack(attempt);
+                })
+                .fail(function() {
+                    handleFailure(attempt);
+                });
+        };
+
+        if (window.substackDocs && window.substackDocs.length) {
+            finalizeSubstack(1);
+            return substackPromise;
+        }
+
+        attemptLoad(1);
+
+        return substackPromise;
+    };
+
+    var normalizeLink = function(link, base) {
         if (!link) {
             return '';
         }
@@ -164,7 +294,7 @@ $(function() {
         if (link.charAt(0) !== '/') {
             link = '/' + link;
         }
-        return baseUrl + link;
+        return (base || baseUrl) + link;
     };
 
     var formatDisplayLink = function(link) {
@@ -202,26 +332,102 @@ $(function() {
         return text;
     };
 
-    var renderResults = function(results) {
-        var filtered = [];
-        var i;
-        $searchResultsList.empty();
+    var resolveDoc = function(ref, docsByIdLookup, docsList) {
+        var doc = docsByIdLookup[String(ref)] || docsList[ref];
+        if (!doc && docsList.length) {
+            doc = docsList.filter(function(item) {
+                return item && String(item.id) === String(ref);
+            })[0];
+        }
+        return doc || null;
+    };
 
-        for (i = 0; i < results.length; i++) {
-            var ref = results[i].ref;
-            var doc = docsById[String(ref)] || siteDocs[ref];
-            if (!doc && siteDocs.length) {
-                doc = siteDocs.filter(function(item) {
-                    return item && String(item.id) === String(ref);
-                })[0];
-            }
+    var buildResults = function(rawResults, docsByIdLookup, docsList, sourceLabel, sourceBase) {
+        var mapped = [];
+        var i;
+        for (i = 0; i < rawResults.length; i++) {
+            var result = rawResults[i];
+            var doc = resolveDoc(result.ref, docsByIdLookup, docsList);
             if (!doc || !isSearchable(doc)) {
                 continue;
             }
-            filtered.push(doc);
+            mapped.push({
+                doc: doc,
+                score: result.score,
+                sourceLabel: sourceLabel,
+                sourceBase: sourceBase
+            });
         }
+        return mapped;
+    };
+
+    var buildCombinedResults = function(query, wantsSystem, wantsSubstack) {
+        var combined = [];
+        if (wantsSystem && indexReady && siteIndex) {
+            combined = combined.concat(buildResults(siteIndex.search(query, { expand: true }), docsById, siteDocs, systemSourceLabel, baseUrl));
+        }
+        if (wantsSubstack && substackReady && substackIndex) {
+            combined = combined.concat(buildResults(substackIndex.search(query, { expand: true }), substackDocsById, substackDocs, substackSourceLabel, substackBaseUrl));
+        }
+        combined.sort(function(a, b) {
+            return b.score - a.score;
+        });
+        return combined;
+    };
+
+    var buildSourceLabel = function(items) {
+        var labels = [];
+        var i;
+        var sources = {};
+        for (i = 0; i < items.length; i++) {
+            var label = (typeof items[i] === 'string') ? items[i] : items[i].sourceLabel;
+            if (label) {
+                sources[label] = true;
+            }
+        }
+        if (sources[systemSourceLabel]) {
+            labels.push(systemSourceLabel);
+        }
+        if (sources[substackSourceLabel]) {
+            labels.push(substackSourceLabel);
+        }
+        if (!labels.length) {
+            return 'the archive';
+        }
+        if (labels.length === 2) {
+            return labels[0] + ' and ' + labels[1];
+        }
+        return labels[0];
+    };
+
+    var buildPendingLabel = function(pending) {
+        var hasSystem = pending.indexOf(systemSourceLabel) !== -1;
+        var hasSubstack = pending.indexOf(substackSourceLabel) !== -1;
+        if (hasSystem && hasSubstack) {
+            return systemSourceLabel + ' index and ' + substackSourceLabel + ' feed';
+        }
+        if (hasSubstack) {
+            return substackSourceLabel + ' feed';
+        }
+        if (hasSystem) {
+            return systemSourceLabel + ' index';
+        }
+        return 'archive sources';
+    };
+
+    var renderResults = function(results, pendingSources) {
+        var i;
+        var filtered = results || [];
+        var pending = pendingSources || [];
+        $searchResultsList.empty();
 
         if (!filtered.length) {
+            if (pending.length) {
+                $searchCount.text('Loading the ' + buildPendingLabel(pending) + '...');
+                $searchEmpty.addClass('is-hidden');
+                $searchPanel.addClass('is-hidden');
+                return;
+            }
             $searchCount.text('No matches found.');
             $searchEmpty.removeClass('is-hidden');
             $searchPanel.addClass('is-hidden');
@@ -230,13 +436,21 @@ $(function() {
 
         var total = filtered.length;
         var shown = Math.min(total, maxResults);
+        var sourceLabel = buildSourceLabel(filtered);
         $searchPanel.removeClass('is-hidden');
+
         for (i = 0; i < shown; i++) {
             var item = filtered[i];
-            var url = normalizeLink(item.link);
-            var title = item.title || 'Untitled';
-            var snippet = extractSnippet(item);
+            var doc = item.doc;
+            var url = normalizeLink(doc.link, item.sourceBase);
+            var title = doc.title || 'Untitled';
+            var snippet = extractSnippet(doc);
             var displayLink = formatDisplayLink(url);
+            var metaLine = displayLink;
+
+            if (item.sourceLabel) {
+                metaLine = metaLine ? (metaLine + ' · ' + item.sourceLabel) : item.sourceLabel;
+            }
 
             var $result = $('<article class="search-result"></article>');
             var $title = $('<h3 class="search-title"></h3>');
@@ -245,17 +459,22 @@ $(function() {
             if (snippet) {
                 $result.append($('<p class="search-snippet"></p>').text(snippet));
             }
-            if (displayLink) {
-                $result.append($('<p class="search-link"></p>').text(displayLink));
+            if (metaLine) {
+                $result.append($('<p class="search-link"></p>').text(metaLine));
             }
             $searchResultsList.append($result);
         }
 
+        var message;
         if (total > shown) {
-            $searchCount.text('Showing ' + shown + ' of ' + total + ' results from System Halted.');
+            message = 'Showing ' + shown + ' of ' + total + ' results from ' + sourceLabel + '.';
         } else {
-            $searchCount.text('Showing ' + total + ' result' + (total === 1 ? '' : 's') + ' from System Halted.');
+            message = 'Showing ' + total + ' result' + (total === 1 ? '' : 's') + ' from ' + sourceLabel + '.';
         }
+        if (pending.length) {
+            message += ' Loading the ' + buildPendingLabel(pending) + '...';
+        }
+        $searchCount.text(message);
     };
 
     var showError = function(message) {
@@ -265,7 +484,9 @@ $(function() {
 
     var updateSearch = function() {
         var query = normalizeText($searchInput.val());
+        var filter = getActiveFilter();
         lastQuery = query;
+        lastFilter = filter;
 
         $searchEmpty.addClass('is-hidden');
         $searchError.addClass('is-hidden');
@@ -280,31 +501,101 @@ $(function() {
             return;
         }
 
-        if (indexReady && isIndexStale()) {
+        var systemFailed = false;
+        var substackFailed = false;
+        var wantsSystem = (filter === 'all' || filter === 'system');
+        var wantsSubstack = (filter === 'all' || filter === 'substack');
+
+        if (wantsSystem && indexReady && isIndexStale()) {
             resetIndex();
-            setLoadingMessage('Refreshing the System Halted index...');
-        } else if (!indexReady) {
-            setLoadingMessage('Loading the System Halted index... this can take a few seconds.');
+        }
+        if (wantsSubstack && substackReady && isSubstackIndexStale()) {
+            resetSubstackIndex();
+        }
+
+        var pendingSources = [];
+        if (wantsSystem && !indexReady) {
+            pendingSources.push(systemSourceLabel);
+        }
+        if (wantsSubstack && !substackReady) {
+            pendingSources.push(substackSourceLabel);
+        }
+        if (pendingSources.length) {
+            setLoadingMessage('Loading the ' + buildPendingLabel(pendingSources) + '...');
         } else {
             $searchCount.text('Searching the archive...');
         }
 
-        resolveIndex()
-            .done(function() {
-                if (lastQuery !== query) {
-                    return;
+        var runSearch = function() {
+            if (lastQuery !== query || lastFilter !== filter) {
+                return;
+            }
+
+            var pending = [];
+            var desiredCount = 0;
+            var failedCount = 0;
+            var hasReadySource = false;
+
+            if (wantsSystem) {
+                desiredCount += 1;
+                if (indexReady) {
+                    hasReadySource = true;
+                } else if (!systemFailed) {
+                    pending.push(systemSourceLabel);
+                } else {
+                    failedCount += 1;
                 }
-                var results = siteIndex.search(query, { expand: true });
-                renderResults(results);
-            })
-            .fail(function() {
-                if (lastQuery !== query) {
-                    return;
+            }
+            if (wantsSubstack) {
+                desiredCount += 1;
+                if (substackReady) {
+                    hasReadySource = true;
+                } else if (!substackFailed) {
+                    pending.push(substackSourceLabel);
+                } else {
+                    failedCount += 1;
                 }
-                $searchCount.text('Search unavailable.');
-                $searchPanel.addClass('is-hidden');
-                showError('Search could not load the archive index. Please try again in a moment.');
-            });
+            }
+
+            if (!hasReadySource) {
+                if (desiredCount && failedCount === desiredCount) {
+                    $searchCount.text('Search unavailable.');
+                    $searchPanel.addClass('is-hidden');
+                    showError('Search could not load the selected sources. Please try again in a moment.');
+                } else if (pending.length) {
+                    setLoadingMessage('Loading the ' + buildPendingLabel(pending) + '...');
+                }
+                return;
+            }
+
+            renderResults(buildCombinedResults(query, wantsSystem, wantsSubstack), pending);
+
+            if (failedCount && hasReadySource) {
+                if (wantsSystem && systemFailed) {
+                    showError(systemSourceLabel + ' index could not load. Results may be incomplete.');
+                } else if (wantsSubstack && substackFailed) {
+                    showError(substackSourceLabel + ' feed could not load. Results may be incomplete.');
+                }
+            }
+        };
+
+        if (wantsSystem) {
+            resolveIndex()
+                .done(runSearch)
+                .fail(function() {
+                    systemFailed = true;
+                    runSearch();
+                });
+        }
+
+        if (wantsSubstack) {
+            resolveSubstackIndex()
+                .done(runSearch)
+                .fail(function() {
+                    substackFailed = true;
+                    runSearch();
+                });
+        }
     };
 
     $searchInput.on('input', function() {
@@ -312,6 +603,10 @@ $(function() {
             clearTimeout(debounceTimer);
         }
         debounceTimer = setTimeout(updateSearch, 200);
+    });
+
+    $searchFilters.on('change', function() {
+        updateSearch();
     });
 });
 
