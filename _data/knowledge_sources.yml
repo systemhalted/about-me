@@ -14,14 +14,14 @@ sources:
   - name: Palak Mathur on Substack
     url: https://palakmathur.substack.com
     type: Creative writing
-    summary: Creative writing portfolio featuring essays and narrative work.
+    summary: Creative writing portfolio featuring short stories, poetry, and essays.
     tags:
       - creative writing
-      - portfolio
-      - essays
+      - short stories
+      - poetry
     highlights:
-      - Longform creative essays and narrative writing.
-      - Curated portfolio of voice-led work.
+      - Short stories, poetry, and narrative essays.
+      - Curated portfolio of creative work.
   - name: Nukkad Shukkad Podcast
     url: https://podcasts.apple.com/us/podcast/nukkad-shukkad/id1537261609
     type: Podcast
