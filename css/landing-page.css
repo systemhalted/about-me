@@ -259,10 +259,6 @@ ul.intro-social-buttons > li {
     margin-top: 18px;
 }
 
-.search-loading {
-    color: var(--muted);
-    font-size: 0.95em;
-}
 
 .search-result {
     padding: 16px 0;

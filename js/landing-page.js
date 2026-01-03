@@ -18,7 +18,6 @@ $(function() {
     var $searchEmpty = $('.js-search-empty');
     var $searchError = $('.js-search-error');
     var $searchPanel = $('.js-search-panel');
-    var $searchLoading = $('.js-search-loading');
     var $searchResultsList = $('.js-search-results-list');
 
     var baseUrl = 'https://systemhalted.in';
@@ -27,11 +26,13 @@ $(function() {
     var siteIndex = null;
     var siteDocs = [];
     var docsById = {};
+    var indexLoadedAt = 0;
     var lastQuery = '';
     var debounceTimer = null;
     var maxResults = 12;
     var maxLoadAttempts = 3;
     var retryDelayMs = 800;
+    var maxIndexAgeMs = 15 * 60 * 1000;
 
     var normalizeText = function(value) {
         return (value || '').toString().toLowerCase().replace(/\s+/g, ' ').trim();
@@ -53,16 +54,32 @@ $(function() {
     };
 
     var setLoadingMessage = function(message) {
-        if ($searchLoading.length) {
-            $searchLoading.text(message);
+        $searchCount.text(message).removeClass('is-hidden');
+    };
+
+    var isIndexStale = function() {
+        if (!indexLoadedAt) {
+            return false;
         }
-        $searchPanel.removeClass('is-hidden');
-        $searchLoading.removeClass('is-hidden');
+        return (Date.now() - indexLoadedAt) > maxIndexAgeMs;
+    };
+
+    var resetIndex = function() {
+        indexReady = false;
+        indexPromise = null;
+        siteIndex = null;
+        siteDocs = [];
+        docsById = {};
+        indexLoadedAt = 0;
     };
 
     var resolveIndex = function() {
         if (indexReady && siteIndex && siteDocs.length) {
-            return $.Deferred().resolve().promise();
+            if (isIndexStale()) {
+                resetIndex();
+            } else {
+                return $.Deferred().resolve().promise();
+            }
         }
         if (indexPromise) {
             return indexPromise;
@@ -108,6 +125,7 @@ $(function() {
                     }
                 });
                 indexReady = true;
+                indexLoadedAt = Date.now();
                 deferred.resolve();
             } catch (err) {
                 handleFailure(attempt);
@@ -188,7 +206,6 @@ $(function() {
         var filtered = [];
         var i;
         $searchResultsList.empty();
-        $searchLoading.addClass('is-hidden');
 
         for (i = 0; i < results.length; i++) {
             var ref = results[i].ref;
@@ -254,7 +271,6 @@ $(function() {
         $searchError.addClass('is-hidden');
         $searchCount.removeClass('is-hidden');
         $searchPanel.addClass('is-hidden');
-        $searchLoading.addClass('is-hidden');
 
         if (!query) {
             $searchResultsList.empty();
@@ -264,11 +280,13 @@ $(function() {
             return;
         }
 
-        if (!indexReady) {
+        if (indexReady && isIndexStale()) {
+            resetIndex();
+            setLoadingMessage('Refreshing the System Halted index...');
+        } else if (!indexReady) {
             setLoadingMessage('Loading the System Halted index... this can take a few seconds.');
         } else {
             $searchCount.text('Searching the archive...');
-            $searchLoading.addClass('is-hidden');
         }
 
         resolveIndex()
