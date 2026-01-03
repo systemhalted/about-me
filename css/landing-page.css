@@ -255,12 +255,6 @@ ul.intro-social-buttons > li {
     box-shadow: var(--shadow);
 }
 
-.search-loading,
-.search-placeholder {
-    color: var(--muted);
-    font-size: 0.95em;
-}
-
 .search-results-list {
     margin-top: 18px;
 }

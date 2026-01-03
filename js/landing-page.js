@@ -17,8 +17,7 @@ $(function() {
     var $searchCount = $('.js-search-count');
     var $searchEmpty = $('.js-search-empty');
     var $searchError = $('.js-search-error');
-    var $searchLoading = $('.js-search-loading');
-    var $searchPlaceholder = $('.js-search-placeholder');
+    var $searchPanel = $('.js-search-panel');
     var $searchResultsList = $('.js-search-results-list');
 
     var baseUrl = 'https://systemhalted.in';
@@ -52,9 +51,7 @@ $(function() {
     };
 
     var setLoadingMessage = function(message) {
-        if ($searchLoading.length) {
-            $searchLoading.text(message);
-        }
+        $searchCount.removeClass('is-hidden').text(message);
     };
 
     var resolveIndex = function() {
@@ -179,7 +176,6 @@ $(function() {
         var filtered = [];
         var i;
         $searchResultsList.empty();
-        $searchLoading.addClass('is-hidden');
 
         for (i = 0; i < results.length; i++) {
             var ref = results[i].ref;
@@ -193,11 +189,13 @@ $(function() {
         if (!filtered.length) {
             $searchCount.text('No matches found.');
             $searchEmpty.removeClass('is-hidden');
+            $searchPanel.addClass('is-hidden');
             return;
         }
 
         var total = filtered.length;
         var shown = Math.min(total, maxResults);
+        $searchPanel.removeClass('is-hidden');
         for (i = 0; i < shown; i++) {
             var item = filtered[i];
             var url = normalizeLink(item.link);
@@ -237,22 +235,19 @@ $(function() {
         $searchEmpty.addClass('is-hidden');
         $searchError.addClass('is-hidden');
         $searchCount.removeClass('is-hidden');
+        $searchPanel.addClass('is-hidden');
 
         if (!query) {
-            $searchLoading.addClass('is-hidden');
             $searchResultsList.empty();
-            $searchPlaceholder.removeClass('is-hidden');
             $searchCount.text('');
             $searchCount.addClass('is-hidden');
             return;
         }
 
-        $searchPlaceholder.addClass('is-hidden');
-        $searchCount.text('Searching the archive...');
         if (!indexReady) {
-            $searchLoading.removeClass('is-hidden');
+            setLoadingMessage('Loading the System Halted index... this can take a few seconds.');
         } else {
-            $searchLoading.addClass('is-hidden');
+            $searchCount.text('Searching the archive...');
         }
 
         resolveIndex()
@@ -267,8 +262,8 @@ $(function() {
                 if (lastQuery !== query) {
                     return;
                 }
-                $searchLoading.addClass('is-hidden');
                 $searchCount.text('Search unavailable.');
+                $searchPanel.addClass('is-hidden');
                 showError('Search could not load the archive index. Please try again in a moment.');
             });
     };
