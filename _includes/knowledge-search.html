@@ -3,48 +3,32 @@
 		<div class="row">
 			<div class="col-lg-10 col-lg-offset-1">
 				<h2>Search the archive</h2>
-				<p class="section-lede">Search by topic, source, or post. Results update instantly.</p>
+				<p class="section-lede">Search the System Halted archive by topic, source, or post.</p>
 				<div class="search-box">
-					<label class="sr-only" for="knowledge-search">Search the knowledge base</label>
+					<label class="sr-only" for="knowledge-search">Search the archive</label>
 					<input type="search" id="knowledge-search" class="form-control search-input js-knowledge-search" placeholder="Search topics and posts">
 					<div class="search-meta" aria-live="polite">
-						<span class="search-count js-search-count">Showing all items.</span>
+						<span class="search-count js-search-count">Type to search the archive.</span>
 						<span class="search-empty js-search-empty is-hidden">No matches yet. Try a shorter query.</span>
+						<span class="search-error js-search-error is-hidden">Search is unavailable right now.</span>
 					</div>
+					<p class="search-hint">Try: product strategy, internet culture, reading log.</p>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-<section id="knowledge-index" class="knowledge-section js-search-group" data-search-group="index">
+<section id="search-results" class="knowledge-section results-section">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-10 col-lg-offset-1">
-				<h2>Knowledge index</h2>
-				<p class="section-lede">Curated entry points and links across my work.</p>
-			</div>
-		</div>
-		<div class="row index-grid">
-			{% for entry in site.data.knowledge_index.entries %}
-			{% capture entry_search %}{{ entry.title }} {{ entry.summary }} {{ entry.source }}{% if entry.tags %}{% for tag in entry.tags %} {{ tag }}{% endfor %}{% endif %}{% endcapture %}
-			<div class="col-md-6 col-lg-4">
-				<div class="knowledge-panel index-card search-item js-search-item" data-search="{{ entry_search | strip_newlines | replace: '"', '' }}">
-					{% if entry.source %}
-					<p class="card-eyebrow">{{ entry.source }}</p>
-					{% endif %}
-					<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-					<p class="card-summary">{{ entry.summary }}</p>
-					{% if entry.tags %}
-					<ul class="tag-list">
-						{% for tag in entry.tags %}
-						<li>{{ tag }}</li>
-						{% endfor %}
-					</ul>
-					{% endif %}
+				<div class="search-results search-panel">
+					<div class="search-loading js-search-loading is-hidden">Loading System Halted index...</div>
+					<div class="search-placeholder js-search-placeholder">Start typing to see results.</div>
+					<div class="search-results-list js-search-results-list"></div>
 				</div>
 			</div>
-			{% endfor %}
 		</div>
 	</div>
 </section>

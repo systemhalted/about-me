@@ -14,79 +14,240 @@ $(function() {
         return;
     }
 
-    var $searchItems = $('.js-search-item');
-    var $searchGroups = $('.js-search-group');
     var $searchCount = $('.js-search-count');
     var $searchEmpty = $('.js-search-empty');
+    var $searchError = $('.js-search-error');
+    var $searchLoading = $('.js-search-loading');
+    var $searchPlaceholder = $('.js-search-placeholder');
+    var $searchResultsList = $('.js-search-results-list');
+
+    var baseUrl = 'https://systemhalted.in';
+    var indexReady = false;
+    var indexPromise = null;
+    var siteIndex = null;
+    var siteDocs = [];
+    var lastQuery = '';
+    var debounceTimer = null;
+    var maxResults = 12;
 
     var normalizeText = function(value) {
         return (value || '').toString().toLowerCase().replace(/\s+/g, ' ').trim();
     };
 
-    var getSearchText = function($element) {
-        var dataText = $element.data('search');
-        if (dataText) {
-            return dataText;
-        }
-        return $element.text();
+    var loadScript = function(src) {
+        var deferred = $.Deferred();
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = src;
+        script.onload = function() {
+            deferred.resolve();
+        };
+        script.onerror = function() {
+            deferred.reject();
+        };
+        document.head.appendChild(script);
+        return deferred.promise();
     };
 
-    var entries = [];
-    $searchItems.each(function() {
-        var $item = $(this);
-        entries.push({
-            element: $item,
-            container: $item.closest('[class*="col-"]'),
-            text: normalizeText(getSearchText($item))
-        });
-    });
+    var resolveIndex = function() {
+        if (indexReady && siteIndex && siteDocs.length) {
+            return $.Deferred().resolve().promise();
+        }
+        if (indexPromise) {
+            return indexPromise;
+        }
 
-    var updateSearch = function() {
-        var query = normalizeText($searchInput.val());
-        var tokens = query ? query.split(' ') : [];
-        var visibleCount = 0;
+        var deferred = $.Deferred();
+        indexPromise = deferred.promise();
 
-        $.each(entries, function(index, entry) {
-            var match = true;
-            if (tokens.length) {
-                $.each(tokens, function(tokenIndex, token) {
-                    if (!token) {
-                        return;
-                    }
-                    if (entry.text.indexOf(token) === -1) {
-                        match = false;
-                        return false;
-                    }
-                });
+        if (typeof window.elasticlunr === 'undefined') {
+            deferred.reject();
+            return indexPromise;
+        }
+
+        var finalizeIndex = function() {
+            try {
+                if (typeof window.ensureSiteIndex === 'function') {
+                    window.ensureSiteIndex();
+                }
+                siteIndex = window.siteIndex;
+                siteDocs = window.siteStore || window.siteDocs || [];
+                if (!siteIndex || !siteDocs.length) {
+                    throw new Error('index missing');
+                }
+                indexReady = true;
+                deferred.resolve();
+            } catch (err) {
+                indexPromise = null;
+                deferred.reject();
             }
+        };
 
-            entry.element.toggleClass('is-hidden', !match);
-            if (entry.container.length) {
-                entry.container.toggleClass('is-hidden', !match);
+        if (window.siteDocs && window.siteDocs.length) {
+            finalizeIndex();
+            return indexPromise;
+        }
+
+        loadScript(baseUrl + '/public/js/webcmd.js')
+            .done(finalizeIndex)
+            .fail(function() {
+                indexPromise = null;
+                deferred.reject();
+            });
+
+        return indexPromise;
+    };
+
+    var normalizeLink = function(link) {
+        if (!link) {
+            return '';
+        }
+        if (link.indexOf('http://') === 0 || link.indexOf('https://') === 0) {
+            return link;
+        }
+        if (link.charAt(0) !== '/') {
+            link = '/' + link;
+        }
+        return baseUrl + link;
+    };
+
+    var formatDisplayLink = function(link) {
+        if (!link) {
+            return '';
+        }
+        return link.replace(/^https?:\/\//, '');
+    };
+
+    var isSearchable = function(doc) {
+        if (!doc) {
+            return false;
+        }
+        if (!doc.title || !doc.link) {
+            return false;
+        }
+        return true;
+    };
+
+    var extractSnippet = function(doc) {
+        if (!doc) {
+            return '';
+        }
+        if (doc.snippet) {
+            return doc.snippet;
+        }
+        if (!doc.content) {
+            return '';
+        }
+        var text = doc.content.replace(/<[^>]*>/g, ' ');
+        text = text.replace(/\s+/g, ' ').trim();
+        if (text.length > 180) {
+            text = text.substring(0, 180) + '...';
+        }
+        return text;
+    };
+
+    var renderResults = function(results) {
+        var filtered = [];
+        var i;
+        $searchResultsList.empty();
+        $searchLoading.addClass('is-hidden');
+
+        for (i = 0; i < results.length; i++) {
+            var ref = results[i].ref;
+            var doc = siteDocs[ref];
+            if (!doc || !isSearchable(doc)) {
+                continue;
             }
-            if (match) {
-                visibleCount += 1;
-            }
-        });
+            filtered.push(doc);
+        }
 
-        $searchGroups.each(function() {
-            var $group = $(this);
-            var hasVisibleItems = $group.find('.js-search-item').not('.is-hidden').length > 0;
-            $group.toggleClass('is-hidden', !hasVisibleItems);
-        });
-
-        if (!query) {
-            $searchCount.text('Showing all ' + visibleCount + ' items.');
-            $searchEmpty.addClass('is-hidden');
+        if (!filtered.length) {
+            $searchCount.text('No matches found.');
+            $searchEmpty.removeClass('is-hidden');
             return;
         }
 
-        $searchCount.text('Showing ' + visibleCount + ' match' + (visibleCount === 1 ? '' : 'es') + '.');
-        $searchEmpty.toggleClass('is-hidden', visibleCount !== 0);
+        var total = filtered.length;
+        var shown = Math.min(total, maxResults);
+        for (i = 0; i < shown; i++) {
+            var item = filtered[i];
+            var url = normalizeLink(item.link);
+            var title = item.title || 'Untitled';
+            var snippet = extractSnippet(item);
+            var displayLink = formatDisplayLink(url);
+
+            var $result = $('<article class="search-result"></article>');
+            var $title = $('<h3 class="search-title"></h3>');
+            $title.append($('<a></a>').attr('href', url).text(title));
+            $result.append($title);
+            if (snippet) {
+                $result.append($('<p class="search-snippet"></p>').text(snippet));
+            }
+            if (displayLink) {
+                $result.append($('<p class="search-link"></p>').text(displayLink));
+            }
+            $searchResultsList.append($result);
+        }
+
+        if (total > shown) {
+            $searchCount.text('Showing ' + shown + ' of ' + total + ' results from System Halted.');
+        } else {
+            $searchCount.text('Showing ' + total + ' result' + (total === 1 ? '' : 's') + ' from System Halted.');
+        }
     };
 
-    $searchInput.on('input', updateSearch);
-    updateSearch();
+    var showError = function(message) {
+        $searchError.text(message);
+        $searchError.removeClass('is-hidden');
+    };
+
+    var updateSearch = function() {
+        var query = normalizeText($searchInput.val());
+        lastQuery = query;
+
+        $searchEmpty.addClass('is-hidden');
+        $searchError.addClass('is-hidden');
+
+        if (!query) {
+            $searchLoading.addClass('is-hidden');
+            $searchResultsList.empty();
+            $searchPlaceholder.removeClass('is-hidden');
+            $searchCount.text('Type to search the archive.');
+            return;
+        }
+
+        $searchPlaceholder.addClass('is-hidden');
+        $searchCount.text('Searching the archive...');
+        if (!indexReady) {
+            $searchLoading.removeClass('is-hidden');
+        } else {
+            $searchLoading.addClass('is-hidden');
+        }
+
+        resolveIndex()
+            .done(function() {
+                if (lastQuery !== query) {
+                    return;
+                }
+                var results = siteIndex.search(query, { expand: true });
+                renderResults(results);
+            })
+            .fail(function() {
+                if (lastQuery !== query) {
+                    return;
+                }
+                $searchLoading.addClass('is-hidden');
+                $searchCount.text('Search unavailable.');
+                showError('Search is unavailable right now.');
+            });
+    };
+
+    $searchInput.on('input', function() {
+        if (debounceTimer) {
+            clearTimeout(debounceTimer);
+        }
+        debounceTimer = setTimeout(updateSearch, 200);
+    });
 });
 
 $('body').scrollspy({

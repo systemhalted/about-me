@@ -198,12 +198,12 @@ ul.intro-social-buttons > li {
     background-color: var(--surface);
 }
 
-.knowledge-section-alt {
-    background-color: #f2f6f2;
-}
-
 .search-section {
     background: linear-gradient(180deg, #fff7ec 0%, #f4f6f1 100%);
+}
+
+.results-section {
+    background-color: #f2f6f2;
 }
 
 .search-box {
@@ -239,7 +239,8 @@ ul.intro-social-buttons > li {
     font-weight: 600;
 }
 
-.search-empty {
+.search-empty,
+.search-error {
     color: var(--accent-dark);
 }
 
@@ -247,6 +248,58 @@ ul.intro-social-buttons > li {
     margin-top: 10px;
     color: var(--muted);
     font-size: 0.9em;
+}
+
+.search-panel {
+    margin-top: 12px;
+    padding: 24px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: var(--shadow);
+}
+
+.search-loading,
+.search-placeholder {
+    color: var(--muted);
+    font-size: 0.95em;
+}
+
+.search-results-list {
+    margin-top: 18px;
+}
+
+.search-result {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.search-result:last-child {
+    border-bottom: none;
+}
+
+.search-title {
+    margin: 0 0 6px;
+    font-size: 1.25em;
+}
+
+.search-title a {
+    color: var(--ink);
+}
+
+.search-title a:hover,
+.search-title a:focus {
+    color: var(--accent);
+}
+
+.search-snippet {
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+
+.search-link {
+    font-size: 0.85em;
+    color: var(--muted);
 }
 
 .is-hidden {
@@ -341,52 +394,6 @@ ul.intro-social-buttons > li {
     margin-bottom: 10px;
 }
 
-.knowledge-panel {
-    height: 100%;
-    padding: 24px;
-    border-radius: 16px;
-    border: 1px solid var(--border);
-    background-color: rgba(255, 255, 255, 0.75);
-    box-shadow: var(--shadow);
-}
-
-.index-grid {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 10px;
-}
-
-.index-grid > div {
-    display: flex;
-    margin-bottom: 24px;
-}
-
-.index-card h3 {
-    margin-top: 0;
-}
-
-.index-card {
-    width: 100%;
-}
-
-.tag-list {
-    list-style: none;
-    padding-left: 0;
-    margin: 12px 0 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.tag-list li {
-    font-size: 0.7em;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    background-color: rgba(31, 36, 34, 0.08);
-    color: var(--muted);
-    padding: 4px 8px;
-    border-radius: 999px;
-}
 
 
 @keyframes rise-fade {
