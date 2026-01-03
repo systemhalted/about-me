@@ -394,6 +394,25 @@ ul.intro-social-buttons > li {
     margin-bottom: 10px;
 }
 
+.tag-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 12px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag-list li {
+    font-size: 0.7em;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    background-color: rgba(31, 36, 34, 0.08);
+    color: var(--muted);
+    padding: 4px 8px;
+    border-radius: 999px;
+}
+
 
 
 @keyframes rise-fade {

@@ -3,6 +3,11 @@ sources:
     url: https://systemhalted.in
     type: Essays and notes
     summary: Longform writing on technology, culture, and practice.
+    tags:
+      - essays
+      - technology
+      - culture
+      - practice
     highlights:
       - Deep dives on product, engineering, and internet culture.
       - Opinionated essays with references and threads to follow.
@@ -10,6 +15,10 @@ sources:
     url: https://palakmathur.substack.com
     type: Newsletter
     summary: Shorter dispatches, experiments, and work-in-progress ideas.
+    tags:
+      - newsletter
+      - notes
+      - experiments
     highlights:
       - Weekly ideas, reflections, and reading notes.
       - Cross-links to System Halted essays.
@@ -17,6 +26,10 @@ sources:
     url: https://podcasts.apple.com/us/podcast/nukkad-shukkad/id1537261609
     type: Podcast
     summary: Conversations that expand the written work into audio.
+    tags:
+      - podcast
+      - conversations
+      - audio
     highlights:
       - Guest conversations and solo episodes.
       - Theme clusters that complement the essays.
@@ -24,6 +37,10 @@ sources:
     url: https://pinboard.in/u:systemhalted
     type: Links
     summary: Curated references, tools, and essays I return to.
+    tags:
+      - bookmarks
+      - research
+      - references
     highlights:
       - Reading trail for ongoing research.
       - Signals for what I am exploring next.
@@ -31,6 +48,10 @@ sources:
     url: https://www.librarycat.org/lib/palakmathur
     type: Reading log
     summary: The books I collect, track, and recommend.
+    tags:
+      - books
+      - reading
+      - catalog
     highlights:
       - Topics and authors that shape my thinking.
       - Useful for building a reading path.
@@ -38,6 +59,10 @@ sources:
     url: https://www.goodreads.com/user/show/1863824-palak-mathur
     type: Reading log
     summary: Ratings and reviews across my recent reading.
+    tags:
+      - reviews
+      - ratings
+      - reading
     highlights:
       - Notes on what landed and why.
       - Signals for current interests.

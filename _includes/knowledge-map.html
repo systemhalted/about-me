@@ -1,9 +1,9 @@
-<section id="knowledge" class="knowledge-section">
+<section id="knowledge-index" class="knowledge-section">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-10 col-lg-offset-1">
-				<h2>Sources</h2>
-				<p class="section-lede">Everything here is drawn from my public writing, newsletter, podcast, and reading logs.</p>
+				<h2>Knowledge index</h2>
+				<p class="section-lede">A map of my public writing, newsletter, podcast, and reading logs.</p>
 			</div>
 		</div>
 		<div class="row knowledge-cards">
@@ -13,6 +13,13 @@
 					<p class="card-eyebrow">{{ source.type }}</p>
 					<h3><a href="{{ source.url }}">{{ source.name }}</a></h3>
 					<p class="card-summary">{{ source.summary }}</p>
+					{% if source.tags %}
+					<ul class="tag-list">
+						{% for tag in source.tags %}
+						<li>{{ tag }}</li>
+						{% endfor %}
+					</ul>
+					{% endif %}
 					{% if source.highlights %}
 					<ul class="card-list">
 						{% for highlight in source.highlights %}
