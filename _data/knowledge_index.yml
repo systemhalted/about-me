@@ -1,0 +1,56 @@
+# Curated entry points for search. Replace or expand with specific posts.
+entries:
+  - title: Start here with System Halted
+    url: https://systemhalted.in
+    source: System Halted
+    summary: Anchor essays that map my thinking on technology, culture, and practice.
+    tags:
+      - start here
+      - essays
+      - technology
+      - culture
+      - agentic systems
+      - artificial intelligence
+      - computer science
+      - politics
+  - title: Creative Writing portfolio
+    url: https://palakmathur.substack.com/
+    source: Substack
+    summary: Short stories, flash fiction, poetry and serialized narratives.
+    tags:
+      - short stories
+      - flash fiction
+      - poetry
+      - serialized narratives
+  - title: Nukkad Shukkad conversations
+    url: https://podcasts.apple.com/us/podcast/nukkad-shukkad/id1537261609
+    source: Podcast
+    summary: Conversations that expand and contextualize the essays.
+    tags:
+      - podcast
+      - conversations
+      - audio
+  - title: Reading log on LibraryThing
+    url: https://www.librarycat.org/lib/palakmathur
+    source: LibraryThing
+    summary: The books and authors that shape my thinking.
+    tags:
+      - reading
+      - books
+      - influences
+  - title: Goodreads shelf
+    url: https://www.goodreads.com/user/show/1863824-palak-mathur
+    source: Goodreads
+    summary: Ratings and reviews across recent reading.
+    tags:
+      - reading
+      - reviews
+      - ratings
+  - title: Pinboard bookmarks
+    url: https://pinboard.in/u:systemhalted
+    source: Pinboard
+    summary: Curated links, references, and research trails.
+    tags:
+      - bookmarks
+      - links
+      - research

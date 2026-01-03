@@ -1,0 +1,43 @@
+sources:
+  - name: System Halted
+    url: https://systemhalted.in
+    type: Essays and notes
+    summary: Longform writing on technology, culture, and practice.
+    highlights:
+      - Deep dives on product, engineering, and internet culture.
+      - Opinionated essays with references and threads to follow.
+  - name: Palak Mathur on Substack
+    url: https://palakmathur.substack.com
+    type: Newsletter
+    summary: Shorter dispatches, experiments, and work-in-progress ideas.
+    highlights:
+      - Weekly ideas, reflections, and reading notes.
+      - Cross-links to System Halted essays.
+  - name: Nukkad Shukkad Podcast
+    url: https://podcasts.apple.com/us/podcast/nukkad-shukkad/id1537261609
+    type: Podcast
+    summary: Conversations that expand the written work into audio.
+    highlights:
+      - Guest conversations and solo episodes.
+      - Theme clusters that complement the essays.
+  - name: Public bookmarks
+    url: https://pinboard.in/u:systemhalted
+    type: Links
+    summary: Curated references, tools, and essays I return to.
+    highlights:
+      - Reading trail for ongoing research.
+      - Signals for what I am exploring next.
+  - name: LibraryThing catalog
+    url: https://www.librarycat.org/lib/palakmathur
+    type: Reading log
+    summary: The books I collect, track, and recommend.
+    highlights:
+      - Topics and authors that shape my thinking.
+      - Useful for building a reading path.
+  - name: Goodreads shelf
+    url: https://www.goodreads.com/user/show/1863824-palak-mathur
+    type: Reading log
+    summary: Ratings and reviews across my recent reading.
+    highlights:
+      - Notes on what landed and why.
+      - Signals for current interests.

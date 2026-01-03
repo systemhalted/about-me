@@ -1,0 +1,28 @@
+<section id="knowledge" class="knowledge-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 col-lg-offset-1">
+				<h2>Sources</h2>
+				<p class="section-lede">Everything here is drawn from my public writing, newsletter, podcast, and reading logs.</p>
+			</div>
+		</div>
+		<div class="row knowledge-cards">
+			{% for source in site.data.knowledge_sources.sources %}
+			<div class="col-md-6 col-lg-4">
+				<div class="knowledge-card">
+					<p class="card-eyebrow">{{ source.type }}</p>
+					<h3><a href="{{ source.url }}">{{ source.name }}</a></h3>
+					<p class="card-summary">{{ source.summary }}</p>
+					{% if source.highlights %}
+					<ul class="card-list">
+						{% for highlight in source.highlights %}
+						<li>{{ highlight }}</li>
+						{% endfor %}
+					</ul>
+					{% endif %}
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
