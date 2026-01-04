@@ -21,8 +21,8 @@ jobs:
             echo "No changes."
             exit 0
           fi
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
           git add js/substack-docs.js
           git commit -m "refresh Substack search index"
           git push

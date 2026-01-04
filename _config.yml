@@ -108,6 +108,7 @@ social:
     highlights:
       - Threads and quick essays.
       - Signals on what I am reading.
+    show_in_header: false
   - name: Instagram
     url: https://www.instagram.com/palak_clicks/
     title: instagram
@@ -134,6 +135,7 @@ social:
     highlights:
       - Reading trail for ongoing research.
       - Signals for what I am exploring next.
+    show_in_header: false
   - name: LibraryThing catalog
     url: https://www.librarycat.org/lib/palakmathur
     title: book
@@ -174,3 +176,4 @@ social:
     highlights:
       - Longer posts and links.
       - Open-web conversations.
+    show_in_header: false
