@@ -188,7 +188,7 @@ $(function() {
 
         attemptLoad = function(attempt) {
             var cacheBuster = '?retry=' + attempt + '-' + Date.now();
-            loadScript(baseUrl + '/public/js/webcmd.js' + cacheBuster)
+            loadScript(baseUrl + '/assets/js/webcmd.js' + cacheBuster)
                 .done(function() {
                     finalizeIndex(attempt);
                 })
