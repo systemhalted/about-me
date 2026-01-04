@@ -13,34 +13,164 @@ include:
   - .well-known
 
 social:
- 
-  - title: blog
+  - name: System Halted
     url: https://systemhalted.in
+    title: blog
     type: solid
-  - title: podcast
+    card-title: Essays and notes
+    summary: Longform writing on technology, culture, and practice.
+    tags:
+      - essays
+      - technology
+      - culture
+      - practice
+    highlights:
+      - Deep dives on product, engineering, and internet culture.
+      - Opinionated essays with references and threads to follow.
+    show_in_header: false
+  - name: Palak Mathur on Substack
+    url: https://palakmathur.substack.com
+    title: pen-nib
+    type: solid
+    card-title: Creative writing
+    summary: Creative writing portfolio featuring short stories, poetry, and essays.
+    tags:
+      - creative writing
+      - short stories
+      - poetry
+    highlights:
+      - Short stories, poetry, and narrative essays.
+      - Curated portfolio of creative work.
+    show_in_header: false
+  - name: Nukkad Shukkad Podcast
     url: https://podcasts.apple.com/us/podcast/nukkad-shukkad/id1537261609
+    title: podcast
     type: solid
-  - title: spotify
+    card-title: Podcast
+    summary: Conversations that expand the written work into audio.
+    tags:
+      - podcast
+      - conversations
+      - audio
+    highlights:
+      - Guest conversations and solo episodes.
+      - Theme clusters that complement the essays.
+  - name: Nukkad Shukkad on Spotify
     url: https://open.spotify.com/show/35GJ2PUl23E4LeFLRuFBl6
+    title: spotify
     type: brands
-  - title: github
+    card-title: Podcast platform
+    summary: Stream the podcast on Spotify.
+    tags:
+      - podcast
+      - spotify
+      - audio
+    highlights:
+      - Follow the show for new episodes.
+      - Easy playback across devices.
+    show_in_header: false
+  - name: GitHub
     url: https://github.com/systemhalted
+    title: github
     type: brands
-  - title: linkedin
+    card-title: Code
+    summary: Open-source projects, experiments, and notes.
+    tags:
+      - code
+      - open-source
+      - projects
+    highlights:
+      - Side projects and prototypes.
+      - Issues, docs, and roadmaps.
+  - name: LinkedIn
     url: https://www.linkedin.com/in/systemhalted/
+    title: linkedin
     type: brands
-  - title: twitter
+    card-title: Work
+    summary: Professional profile and collaborations.
+    tags:
+      - work
+      - collaborations
+      - career
+    highlights:
+      - Experience and roles.
+      - Ways to connect professionally.
+  - name: Twitter
     url: https://twitter.com/palak
+    title: twitter
     type: brands
-  - title: instagram
+    card-title: Micro-notes
+    summary: Short updates, links, and quick takes.
+    tags:
+      - updates
+      - links
+      - notes
+    highlights:
+      - Threads and quick essays.
+      - Signals on what I am reading.
+  - name: Instagram
     url: https://www.instagram.com/palak_clicks/
+    title: instagram
     type: brands
-  - title: bookmark
+    card-title: Photography
+    summary: Photo essays and visual notes.
+    tags:
+      - photography
+      - visuals
+      - stories
+    highlights:
+      - Photo series and travel frames.
+      - Behind-the-scenes snapshots.
+  - name: Public bookmarks
     url: https://pinboard.in/u:systemhalted
+    title: bookmark
     type: solid
-  - title: book
+    card-title: Links
+    summary: Curated references, tools, and essays I return to.
+    tags:
+      - bookmarks
+      - research
+      - references
+    highlights:
+      - Reading trail for ongoing research.
+      - Signals for what I am exploring next.
+  - name: LibraryThing catalog
     url: https://www.librarycat.org/lib/palakmathur
+    title: book
     type: solid
-  - title: mastodon
-    url: https://fosstodon.org/@squeamishossifrage
+    card-title: Reading log
+    summary: The books I collect, track, and recommend.
+    tags:
+      - books
+      - reading
+      - catalog
+    highlights:
+      - Topics and authors that shape my thinking.
+      - Useful for building a reading path.
+  - name: Goodreads shelf
+    url: https://www.goodreads.com/user/show/1863824-palak-mathur
+    title: goodreads
     type: brands
+    card-title: Reading log
+    summary: Ratings and reviews across my recent reading.
+    tags:
+      - reviews
+      - ratings
+      - reading
+    highlights:
+      - Notes on what landed and why.
+      - Signals for current interests.
+    show_in_header: false
+  - name: Mastodon
+    url: https://fosstodon.org/@squeamishossifrage
+    title: mastodon
+    type: brands
+    card-title: Open social
+    summary: Decentralized updates and conversations.
+    tags:
+      - mastodon
+      - open web
+      - community
+    highlights:
+      - Longer posts and links.
+      - Open-web conversations.

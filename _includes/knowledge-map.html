@@ -7,11 +7,11 @@
 			</div>
 		</div>
 		<div class="row knowledge-cards">
-			{% for source in site.data.knowledge_sources.sources %}
+			{% for source in site.social %}
 			<div class="col-md-6 col-lg-4">
 				<div class="knowledge-card">
-					<p class="card-eyebrow">{{ source.type }}</p>
-					<h3><a href="{{ source.url }}">{{ source.name }}</a></h3>
+					<p class="card-eyebrow">{{ source["card-title"] }}</p>
+					<h3><a href="{{ source.url }}"><i class="fa-{{ source.type }} fa-{{ source.title }} fa-fw" aria-hidden="true"></i> {{ source.name }}</a></h3>
 					<p class="card-summary">{{ source.summary }}</p>
 					{% if source.tags %}
 					<ul class="tag-list">
