@@ -545,6 +545,11 @@ ul.intro-social-buttons > li {
     .section-divider {
         height: 40px;
     }
+
+    .knowledge-cards > div {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
 
 .network-name {
