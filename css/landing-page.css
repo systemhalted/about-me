@@ -63,8 +63,8 @@ h6 {
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 90vh;
-    padding: 90px 0 70px;
+    min-height: 80vh;
+    padding: 70px 0 50px;
     background: linear-gradient(160deg, #fff4e6 0%, #f2f7f4 55%, #e9f4f1 100%);
     overflow: hidden;
 }
@@ -91,7 +91,7 @@ h6 {
 
 .intro-message {
     position: relative;
-    padding: 40px 0;
+    padding: 28px 0;
     z-index: 1;
     animation: rise-fade 0.9s ease-out both;
 }
@@ -194,8 +194,16 @@ ul.intro-social-buttons > li {
 
 .knowledge-section {
     position: relative;
-    padding: 90px 0;
+    padding: 60px 0;
     background-color: var(--surface);
+}
+
+#home + .knowledge-section {
+    padding-top: 40px;
+}
+
+.knowledge-section + .knowledge-section {
+    padding-top: 24px;
 }
 
 .search-section {
@@ -475,11 +483,11 @@ ul.intro-social-buttons > li {
 @media(max-width:767px) {
     .intro-header {
         min-height: auto;
-        padding: 70px 0 60px;
+        padding: 60px 0 45px;
     }
 
     .intro-message {
-        padding-bottom: 10px;
+        padding-bottom: 6px;
     }
 
     .intro-message > h1 {
@@ -518,7 +526,15 @@ ul.intro-social-buttons > li {
     }
 
     .knowledge-section {
-        padding: 70px 0;
+        padding: 50px 0;
+    }
+
+    #home + .knowledge-section {
+        padding-top: 36px;
+    }
+
+    .knowledge-section + .knowledge-section {
+        padding-top: 22px;
     }
 }
 
