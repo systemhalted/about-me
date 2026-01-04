@@ -610,6 +610,80 @@ $(function() {
     });
 });
 
+$(function() {
+    var $toggle = $('.js-theme-toggle');
+    if (!$toggle.length) {
+        return;
+    }
+
+    var storageKey = 'theme';
+    var root = document.documentElement;
+    var $label = $toggle.find('.theme-toggle-text');
+    var mediaQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+    var getStoredTheme = function() {
+        var value = null;
+        try {
+            value = window.localStorage.getItem(storageKey);
+        } catch (err) {
+            value = null;
+        }
+        if (value === 'light' || value === 'dark') {
+            return value;
+        }
+        return '';
+    };
+
+    var getSystemTheme = function() {
+        if (mediaQuery && mediaQuery.matches) {
+            return 'dark';
+        }
+        return 'light';
+    };
+
+    var updateToggle = function(theme) {
+        var isDark = theme === 'dark';
+        $toggle.attr('aria-pressed', isDark);
+        if ($label.length) {
+            $label.text(isDark ? 'Light mode' : 'Dark mode');
+        }
+    };
+
+    var applyTheme = function(theme, persist) {
+        if (persist) {
+            root.setAttribute('data-theme', theme);
+        } else {
+            root.removeAttribute('data-theme');
+        }
+        updateToggle(theme);
+    };
+
+    var storedTheme = getStoredTheme();
+    if (storedTheme) {
+        applyTheme(storedTheme, true);
+    } else {
+        applyTheme(getSystemTheme(), false);
+    }
+
+    $toggle.on('click', function() {
+        var currentTheme = getStoredTheme() || getSystemTheme();
+        var nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        try {
+            window.localStorage.setItem(storageKey, nextTheme);
+        } catch (err) {
+        }
+        applyTheme(nextTheme, true);
+    });
+
+    if (mediaQuery && typeof mediaQuery.addEventListener === 'function') {
+        mediaQuery.addEventListener('change', function(event) {
+            if (!getStoredTheme()) {
+                applyTheme(event.matches ? 'dark' : 'light', false);
+            }
+        });
+    }
+});
+
 $('body').scrollspy({
     target: '.navbar-fixed-top'
 })

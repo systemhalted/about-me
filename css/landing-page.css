@@ -106,6 +106,48 @@ h6 {
     background: radial-gradient(circle, rgba(58, 133, 120, 0.18) 0%, rgba(58, 133, 120, 0) 70%);
 }
 
+.intro-toolbar {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 12px;
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: var(--radius-pill, 999px);
+    border: 1px solid var(--border, rgba(31, 36, 34, 0.12));
+    background-color: rgba(255, 255, 255, 0.85);
+    color: var(--ink, #1f2422);
+    font-size: 0.7em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus {
+    border-color: var(--accent, #d85a3a);
+    color: var(--accent, #d85a3a);
+}
+
+.theme-toggle:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring, 0 0 0 2px rgba(216, 90, 58, 0.15));
+}
+
+.theme-toggle-icon {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background-color: var(--accent, #d85a3a);
+    box-shadow: 0 0 0 2px rgba(216, 90, 58, 0.18);
+}
+
 .intro-message {
     position: relative;
     padding: 28px 0;
@@ -676,6 +718,11 @@ p.copyright {
         width: 100%;
     }
 
+    .intro-toolbar {
+        justify-content: center;
+        padding-top: 8px;
+    }
+
     .knowledge-section {
         padding: 50px 0;
     }
@@ -730,6 +777,10 @@ p.copyright {
         background-color: rgba(28, 33, 31, 0.85);
     }
 
+    .theme-toggle {
+        background-color: rgba(28, 33, 31, 0.85);
+    }
+
     .search-panel {
         background-color: rgba(27, 32, 30, 0.9);
     }
@@ -737,4 +788,86 @@ p.copyright {
     .tag-list li {
         background-color: rgba(244, 244, 242, 0.12);
     }
+}
+
+:root[data-theme="dark"] {
+    --ink: #f4f4f2;
+    --muted: #c3c9c6;
+    --accent: #f08b6e;
+    --accent-dark: #e07559;
+    --surface: #1d2321;
+    --panel: #232b28;
+    --border: rgba(244, 244, 242, 0.15);
+    --shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    --focus-ring: 0 0 0 2px rgba(240, 139, 110, 0.3);
+    --gradient-body: linear-gradient(130deg, #151a18 0%, #1f2522 45%, #24302b 100%);
+    --gradient-hero: linear-gradient(160deg, #1b211f 0%, #202826 55%, #23302b 100%);
+    --gradient-section-divider: linear-gradient(160deg, #1b211f 0%, #202826 55%, #23302b 100%);
+    --gradient-search: linear-gradient(180deg, #161c1a 0%, #1f2522 100%);
+}
+
+:root[data-theme="dark"] body {
+    background: var(--gradient-body, linear-gradient(130deg, #151a18 0%, #1f2522 45%, #24302b 100%));
+}
+
+:root[data-theme="dark"] .intro-header {
+    background: var(--gradient-hero, linear-gradient(160deg, #1b211f 0%, #202826 55%, #23302b 100%));
+}
+
+:root[data-theme="dark"] .section-divider {
+    background: var(--gradient-section-divider, linear-gradient(160deg, #1b211f 0%, #202826 55%, #23302b 100%));
+}
+
+:root[data-theme="dark"] .intro-social-buttons .btn,
+:root[data-theme="dark"] .theme-toggle {
+    background-color: rgba(28, 33, 31, 0.85);
+}
+
+:root[data-theme="dark"] .search-panel {
+    background-color: rgba(27, 32, 30, 0.9);
+}
+
+:root[data-theme="dark"] .tag-list li {
+    background-color: rgba(244, 244, 242, 0.12);
+}
+
+:root[data-theme="light"] {
+    --ink: #1f2422;
+    --muted: #4b5a55;
+    --accent: #d85a3a;
+    --accent-dark: #b8482f;
+    --surface: #fff7ec;
+    --panel: #fffdf8;
+    --border: rgba(31, 36, 34, 0.12);
+    --shadow: 0 20px 45px rgba(31, 36, 34, 0.12);
+    --focus-ring: 0 0 0 2px rgba(216, 90, 58, 0.15);
+    --gradient-body: linear-gradient(130deg, #fff7ec 0%, #f4f5ef 45%, #eaf4f1 100%);
+    --gradient-hero: linear-gradient(160deg, #fff4e6 0%, #f2f7f4 55%, #e9f4f1 100%);
+    --gradient-section-divider: linear-gradient(160deg, #fff4e6 0%, #f2f7f4 55%, #e9f4f1 100%);
+    --gradient-search: linear-gradient(180deg, #fff7ec 0%, #f4f6f1 100%);
+}
+
+:root[data-theme="light"] body {
+    background: var(--gradient-body, linear-gradient(130deg, #fff7ec 0%, #f4f5ef 45%, #eaf4f1 100%));
+}
+
+:root[data-theme="light"] .intro-header {
+    background: var(--gradient-hero, linear-gradient(160deg, #fff4e6 0%, #f2f7f4 55%, #e9f4f1 100%));
+}
+
+:root[data-theme="light"] .section-divider {
+    background: var(--gradient-section-divider, linear-gradient(160deg, #fff4e6 0%, #f2f7f4 55%, #e9f4f1 100%));
+}
+
+:root[data-theme="light"] .intro-social-buttons .btn,
+:root[data-theme="light"] .theme-toggle {
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+:root[data-theme="light"] .search-panel {
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+:root[data-theme="light"] .tag-list li {
+    background-color: rgba(31, 36, 34, 0.08);
 }
