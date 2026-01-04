@@ -247,8 +247,14 @@ ul.intro-social-buttons > li {
     margin: 0 auto;
     border-radius: var(--radius-pill, 999px);
     border: 1px solid var(--border, rgba(31, 36, 34, 0.12));
+    background-color: var(--panel, #fffdf8);
+    color: var(--ink, #1f2422);
     padding: 12px 18px;
     box-shadow: var(--shadow, 0 20px 45px rgba(31, 36, 34, 0.12));
+}
+
+.search-input::placeholder {
+    color: var(--muted, #4b5a55);
 }
 
 .search-input:focus {
