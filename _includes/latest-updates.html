@@ -1,0 +1,41 @@
+<section id="latest" class="knowledge-section latest-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<h2>Latest updates</h2>
+				<p class="section-lede">Recent reads and posts from System Halted, Substack, and Goodreads.</p>
+				{% if site.data.latest_sources.updated_at %}
+				<p class="latest-updated">Updated {{ site.data.latest_sources.updated_at | date: "%b %d, %Y" }}</p>
+				{% endif %}
+			</div>
+		</div>
+		{% if site.data.latest_sources.sources %}
+		<div class="latest-grid">
+			{% for source in site.data.latest_sources.sources %}
+			<div class="latest-card">
+				<div class="latest-card-header">
+					<h3>{{ source.name }}</h3>
+					<a href="{{ source.url }}" class="latest-source-link">View all</a>
+				</div>
+				{% if source.items %}
+				<ul class="latest-list">
+					{% for item in source.items limit: 3 %}
+					<li>
+						<a href="{{ item.url }}">{{ item.title }}</a>
+						{% if item.published %}
+						<span class="latest-date">{{ item.published | date: "%b %d, %Y" }}</span>
+						{% endif %}
+					</li>
+					{% endfor %}
+				</ul>
+				{% else %}
+				<p class="latest-empty">New entries are being indexed.</p>
+				{% endif %}
+			</div>
+			{% endfor %}
+		</div>
+		{% else %}
+		<p class="latest-empty">Latest entries are on the way.</p>
+		{% endif %}
+	</div>
+</section>

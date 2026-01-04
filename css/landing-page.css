@@ -445,6 +445,83 @@ ul.intro-social-buttons > li {
     animation: rise-fade 0.9s ease-out both;
 }
 
+.latest-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 18px;
+}
+
+.latest-card {
+    padding: 24px;
+    border-radius: var(--radius-card, 18px);
+    border: 1px solid var(--border, rgba(31, 36, 34, 0.12));
+    background-color: var(--panel, #fffdf8);
+    box-shadow: var(--shadow, 0 20px 45px rgba(31, 36, 34, 0.12));
+}
+
+.latest-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.latest-card h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.latest-source-link {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted, #4b5a55);
+}
+
+.latest-source-link:hover,
+.latest-source-link:focus {
+    color: var(--accent, #d85a3a);
+}
+
+.latest-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.latest-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 12px;
+}
+
+.latest-list li:last-child {
+    margin-bottom: 0;
+}
+
+.latest-list a {
+    color: var(--ink, #1f2422);
+}
+
+.latest-list a:hover,
+.latest-list a:focus {
+    color: var(--accent, #d85a3a);
+}
+
+.latest-date,
+.latest-updated,
+.latest-empty {
+    font-size: 0.85em;
+    color: var(--muted, #4b5a55);
+}
+
+.latest-updated {
+    margin-top: 8px;
+}
+
 /* Stagger knowledge cards for a gentle cascade. */
 .knowledge-cards > div:nth-child(1) .knowledge-card {
     animation-delay: var(--card-animation-start-delay, 0.05s);

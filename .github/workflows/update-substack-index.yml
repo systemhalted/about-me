@@ -16,13 +16,14 @@ jobs:
         with:
           python-version: "3.11"
       - run: python3 scripts/build_substack_docs.py
+      - run: python3 scripts/build_latest_sources.py
       - run: |
-          if git diff --quiet -- js/substack-docs.js; then
+          if git diff --quiet -- js/substack-docs.js _data/latest_sources.json; then
             echo "No changes."
             exit 0
           fi
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
-          git add js/substack-docs.js
-          git commit -m "refresh Substack search index"
+          git add js/substack-docs.js _data/latest_sources.json
+          git commit -m "refresh content feeds"
           git push
