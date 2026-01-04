@@ -26,10 +26,10 @@
 							{% endif %}
 						</div>
 						<ul class="list-inline intro-social-buttons">
-							{% for social in site.social %}
-							{% if social.show_in_header != false %}
+							{% for source in site.knowledge.sources %}
+							{% if source.show_in_header != false %}
 							<li>
-								<a href="{{ social.url }}" class="btn btn-default btn-lg"><i class="fa-{{ social.type}} fa-{{ social.title }} fa-fw"></i> 
+								<a href="{{ source.url }}" class="btn btn-default btn-lg"><i class="fa-{{ source.type }} fa-{{ source.title }} fa-fw"></i> 
 								</a>
 							</li>
 							{% endif %}
