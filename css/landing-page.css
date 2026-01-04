@@ -373,8 +373,6 @@ ul.intro-social-buttons > li {
 .knowledge-cards > div {
     display: flex;
     margin-bottom: 24px;
-    flex: 0 0 100%;
-    max-width: 100%;
 }
 
 .knowledge-card {
@@ -487,20 +485,6 @@ ul.intro-social-buttons > li {
     }
 }
 
-@media (min-width: 992px) {
-    .knowledge-cards > div {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-}
-
-@media (min-width: 1200px) {
-    .knowledge-cards > div {
-        flex: 0 0 33.3333%;
-        max-width: 33.3333%;
-    }
-}
-
 @media(max-width:767px) {
     .intro-header {
         min-height: auto;
@@ -560,6 +544,11 @@ ul.intro-social-buttons > li {
 
     .section-divider {
         height: 40px;
+    }
+
+    .knowledge-cards > div {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 }
 
