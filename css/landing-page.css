@@ -210,6 +210,11 @@ ul.intro-social-buttons > li {
     background: linear-gradient(180deg, #fff7ec 0%, #f4f6f1 100%);
 }
 
+.section-divider {
+    height: 56px;
+    background: linear-gradient(160deg, #fff4e6 0%, #f2f7f4 55%, #e9f4f1 100%);
+}
+
 .search-box {
     margin-top: 12px;
 }
@@ -535,6 +540,10 @@ ul.intro-social-buttons > li {
 
     .knowledge-section + .knowledge-section {
         padding-top: 22px;
+    }
+
+    .section-divider {
+        height: 40px;
     }
 }
 
