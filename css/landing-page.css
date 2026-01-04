@@ -18,8 +18,14 @@
     --radius-card: 18px;
     --section-divider-height: 56px;
     --section-divider-height-mobile: 40px;
+    --card-animation-base-delay: 0.08s;
+    --card-animation-start-delay: 0.05s;
     --font-display: "Fraunces", "Times New Roman", serif;
     --font-body: "Work Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --gradient-body: linear-gradient(130deg, #fff7ec 0%, #f4f5ef 45%, #eaf4f1 100%);
+    --gradient-hero: linear-gradient(160deg, #fff4e6 0%, #f2f7f4 55%, #e9f4f1 100%);
+    --gradient-section-divider: linear-gradient(160deg, #fff4e6 0%, #f2f7f4 55%, #e9f4f1 100%);
+    --gradient-search: linear-gradient(180deg, #fff7ec 0%, #f4f6f1 100%);
 }
 
 body,
@@ -32,7 +38,7 @@ body {
     color: var(--ink, #1f2422);
     font-family: var(--font-body, "Work Sans", "Helvetica Neue", Helvetica, Arial, sans-serif);
     line-height: 1.6;
-    background: linear-gradient(130deg, #fff7ec 0%, #f4f5ef 45%, #eaf4f1 100%);
+    background: var(--gradient-body, linear-gradient(130deg, #fff7ec 0%, #f4f5ef 45%, #eaf4f1 100%));
 }
 
 a {
@@ -70,7 +76,7 @@ h6 {
     text-align: center;
     min-height: 80vh;
     padding: 70px 0 50px;
-    background: linear-gradient(160deg, #fff4e6 0%, #f2f7f4 55%, #e9f4f1 100%);
+    background: var(--gradient-hero, linear-gradient(160deg, #fff4e6 0%, #f2f7f4 55%, #e9f4f1 100%));
     overflow: hidden;
     /* Keep hero highlight sizes consistent across breakpoints. */
     --hero-highlight-small: 360px;
@@ -179,8 +185,8 @@ h6 {
 }
 
 .btn:focus-visible {
-    outline: 2px solid var(--accent, #d85a3a);
-    outline-offset: 2px;
+    outline: none;
+    box-shadow: var(--focus-ring, 0 0 0 2px rgba(216, 90, 58, 0.15));
 }
 
 ul.intro-social-buttons {
@@ -223,13 +229,13 @@ ul.intro-social-buttons > li {
 }
 
 .search-section {
-    background: linear-gradient(180deg, #fff7ec 0%, #f4f6f1 100%);
+    background: var(--gradient-search, linear-gradient(180deg, #fff7ec 0%, #f4f6f1 100%));
 }
 
 .section-divider {
     /* Maintain a consistent spacer between grouped sections. */
     height: var(--section-divider-height, 56px);
-    background: linear-gradient(160deg, #fff4e6 0%, #f2f7f4 55%, #e9f4f1 100%);
+    background: var(--gradient-section-divider, linear-gradient(160deg, #fff4e6 0%, #f2f7f4 55%, #e9f4f1 100%));
 }
 
 .search-box {
@@ -375,6 +381,26 @@ ul.intro-social-buttons > li {
     display: none !important;
 }
 
+.text-muted {
+    color: var(--muted, #4b5a55);
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 .section-lede {
     color: var(--muted, #4b5a55);
     font-size: 1.05em;
@@ -382,14 +408,15 @@ ul.intro-social-buttons > li {
 }
 
 .knowledge-cards {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
     margin-top: 10px;
 }
 
 .knowledge-cards > div {
     display: flex;
-    margin-bottom: 24px;
+    padding: 0;
 }
 
 .knowledge-card {
@@ -405,27 +432,27 @@ ul.intro-social-buttons > li {
 
 /* Stagger knowledge cards for a gentle cascade. */
 .knowledge-cards > div:nth-child(1) .knowledge-card {
-    animation-delay: 0.05s;
+    animation-delay: var(--card-animation-start-delay, 0.05s);
 }
 
 .knowledge-cards > div:nth-child(2) .knowledge-card {
-    animation-delay: 0.12s;
+    animation-delay: calc(var(--card-animation-start-delay, 0.05s) + var(--card-animation-base-delay, 0.08s));
 }
 
 .knowledge-cards > div:nth-child(3) .knowledge-card {
-    animation-delay: 0.2s;
+    animation-delay: calc(var(--card-animation-start-delay, 0.05s) + var(--card-animation-base-delay, 0.08s) * 2);
 }
 
 .knowledge-cards > div:nth-child(4) .knowledge-card {
-    animation-delay: 0.28s;
+    animation-delay: calc(var(--card-animation-start-delay, 0.05s) + var(--card-animation-base-delay, 0.08s) * 3);
 }
 
 .knowledge-cards > div:nth-child(5) .knowledge-card {
-    animation-delay: 0.36s;
+    animation-delay: calc(var(--card-animation-start-delay, 0.05s) + var(--card-animation-base-delay, 0.08s) * 4);
 }
 
 .knowledge-cards > div:nth-child(6) .knowledge-card {
-    animation-delay: 0.44s;
+    animation-delay: calc(var(--card-animation-start-delay, 0.05s) + var(--card-animation-base-delay, 0.08s) * 5);
 }
 
 .knowledge-card h3 {
@@ -573,9 +600,8 @@ p.copyright {
         height: var(--section-divider-height-mobile, 40px);
     }
 
-    .knowledge-cards > div {
-        flex: 0 0 100%;
-        max-width: 100%;
+    .knowledge-cards {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -590,15 +616,22 @@ p.copyright {
         --border: rgba(244, 244, 242, 0.15);
         --shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
         --focus-ring: 0 0 0 2px rgba(240, 139, 110, 0.3);
+        --gradient-body: linear-gradient(130deg, #151a18 0%, #1f2522 45%, #24302b 100%);
+        --gradient-hero: linear-gradient(160deg, #1b211f 0%, #202826 55%, #23302b 100%);
+        --gradient-section-divider: linear-gradient(160deg, #1b211f 0%, #202826 55%, #23302b 100%);
+        --gradient-search: linear-gradient(180deg, #161c1a 0%, #1f2522 100%);
     }
 
     body {
-        background: linear-gradient(130deg, #151a18 0%, #1f2522 45%, #24302b 100%);
+        background: var(--gradient-body, linear-gradient(130deg, #151a18 0%, #1f2522 45%, #24302b 100%));
     }
 
-    .intro-header,
+    .intro-header {
+        background: var(--gradient-hero, linear-gradient(160deg, #1b211f 0%, #202826 55%, #23302b 100%));
+    }
+
     .section-divider {
-        background: linear-gradient(160deg, #1b211f 0%, #202826 55%, #23302b 100%);
+        background: var(--gradient-section-divider, linear-gradient(160deg, #1b211f 0%, #202826 55%, #23302b 100%));
     }
 
     .intro-social-buttons .btn {
