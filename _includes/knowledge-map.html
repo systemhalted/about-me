@@ -6,9 +6,9 @@
 				<p class="section-lede">A map of my public writing, newsletter, podcast, and reading logs.</p>
 			</div>
 		</div>
-		<div class="row knowledge-cards">
+		<div class="knowledge-cards">
 			{% for source in site.knowledge.sources %}
-			<div class="col-md-6 col-lg-4">
+			<div class="knowledge-card-slot">
 				<div class="knowledge-card">
 					<p class="card-eyebrow">{{ source["card-title"] }}</p>
 					<h3><a href="{{ source.url }}"><i class="fa-{{ source.type }} fa-{{ source.title }} fa-fw" aria-hidden="true"></i> {{ source.name }}</a></h3>

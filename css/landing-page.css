@@ -415,14 +415,23 @@ ul.intro-social-buttons > li {
 
 .knowledge-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
     margin-top: 10px;
 }
 
-.knowledge-cards > div {
+.knowledge-cards > .knowledge-card-slot {
     display: flex;
     padding: 0;
+    float: none;
+    width: auto;
+    max-width: none;
+}
+
+@media (min-width: 1200px) {
+    .knowledge-cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
 .knowledge-card {
