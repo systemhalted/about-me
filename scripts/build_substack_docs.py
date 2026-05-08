@@ -96,10 +96,22 @@ def main():
     args = parser.parse_args()
 
     force_ipv4()
-    xml_bytes = fetch_feed(args.feed_url)
+    try:
+        xml_bytes = fetch_feed(args.feed_url)
+    except Exception as exc:
+        print(
+            f"Warning: unable to fetch Substack feed ({exc}); "
+            f"leaving {args.output} unchanged.",
+            file=sys.stderr,
+        )
+        return
     docs = parse_feed(xml_bytes)
     if not docs:
-        raise ValueError("No docs found in feed")
+        print(
+            f"Warning: feed returned no docs; leaving {args.output} unchanged.",
+            file=sys.stderr,
+        )
+        return
     write_js(args.output, docs)
     print(f"Wrote {len(docs)} entries to {args.output}")
 
