@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-01-04T22:19:24Z",
+  "updated_at": "2026-05-08T23:17:45Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -8,19 +8,19 @@
       "feed_url": "https://systemhalted.in/feed",
       "items": [
         {
-          "title": "A quiet rebuild: assets, webcmd, and accessibility",
-          "url": "https://systemhalted.in/2026/01/03/quiet-rebuild-assets-webcmd-accessibility/",
-          "published": "2026-01-03T00:00:00Z"
+          "title": "Saving Private Notes",
+          "url": "https://systemhalted.in/2026/05/08/saving-private-notes/",
+          "published": "2026-05-08T00:00:00Z"
         },
         {
-          "title": "A Tomato\u2019s Journey: Revisiting India\u2019s Post-Harvest Supply Chain (2011 \u2192 2026)",
-          "url": "https://systemhalted.in/2026/01/03/tomato-journey-post-harvest-supply-chain-2011-2026/",
-          "published": "2026-01-03T00:00:00Z"
+          "title": "Insight Agents and the End of Dashboard-Driven Analytics",
+          "url": "https://systemhalted.in/2026/02/06/insight-agents-end-of-dashboards/",
+          "published": "2026-02-06T00:00:00Z"
         },
         {
-          "title": "Hello, 2026: Shipping Hope in Small Commits",
-          "url": "https://systemhalted.in/2026/01/01/happy-new-year-2026/",
-          "published": "2026-01-01T00:00:00Z"
+          "title": "Part 8: Big Decimal Rounding Modes - Why HALF_UP Isn\u2019t Always the Answer",
+          "url": "https://systemhalted.in/2026/02/05/rounding-modes-why-half-up-isnt-always-the-answer/",
+          "published": "2026-02-05T00:00:00Z"
         }
       ]
     },
@@ -54,19 +54,19 @@
       "feed_url": "https://www.goodreads.com/user/updates_rss/1863824",
       "items": [
         {
-          "title": "Palak\n        has challenged himself\n      to read 15 books in 2025.",
-          "url": "https://www.goodreads.com/user/show/1863824-palak-mathur",
-          "published": "2025-12-27T08:42:58Z"
+          "title": "Palak added 'Open'",
+          "url": "https://www.goodreads.com/review/show/4311492678",
+          "published": "2026-04-25T04:48:00Z"
         },
         {
-          "title": "Palak added 'Poems & Prayers'",
-          "url": "https://www.goodreads.com/review/show/8179602790",
-          "published": "2025-12-27T08:42:54Z"
+          "title": "Palak is currently reading 'Land of Dreams'",
+          "url": "https://www.goodreads.com/review/show/8424935957",
+          "published": "2026-03-10T02:59:22Z"
         },
         {
-          "title": "Palak is currently reading 'Thinking in Systems: A Primer'",
-          "url": "https://www.goodreads.com/review/show/8173353667",
-          "published": "2025-12-25T09:00:03Z"
+          "title": "Palak wants to read 'Once Upon a Prime: The Wondrous Connections Between Mathematics and Literature'",
+          "url": "https://www.goodreads.com/review/show/8370023979",
+          "published": "2026-02-18T16:03:28Z"
         }
       ]
     }
