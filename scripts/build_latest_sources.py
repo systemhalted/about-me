@@ -34,8 +34,18 @@ SOURCES = [
 ]
 
 
+BROWSER_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    ),
+    "Accept": "application/rss+xml, application/xml;q=0.9, */*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+}
+
+
 def fetch_feed(url):
-    request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    request = urllib.request.Request(url, headers=BROWSER_HEADERS)
     with urllib.request.urlopen(request, timeout=30) as response:
         return response.read()
 
@@ -133,19 +143,50 @@ def parse_feed(xml_bytes, limit):
     return []
 
 
-def build_sources(limit):
+def load_previous(path):
+    try:
+        with open(path, "r", encoding="utf-8") as handle:
+            data = json.load(handle)
+    except (OSError, ValueError):
+        return {}
+    previous = {}
+    for source in data.get("sources", []):
+        if "id" in source:
+            previous[source["id"]] = source
+    return previous
+
+
+def build_sources(limit, previous):
     results = []
     for source in SOURCES:
         feed_content = None
         feed_url = ""
+        last_error = None
         for candidate in source["feed_urls"]:
             try:
                 feed_content = fetch_feed(candidate)
                 feed_url = candidate
                 break
-            except Exception:
+            except Exception as exc:
+                last_error = exc
                 continue
+
         if feed_content is None:
+            prior = previous.get(source["id"])
+            if prior is not None:
+                print(
+                    f"Warning: unable to fetch feed for {source['name']} "
+                    f"({last_error}); reusing previous items.",
+                    file=sys.stderr,
+                )
+                results.append({
+                    "id": source["id"],
+                    "name": source["name"],
+                    "url": source["site_url"],
+                    "feed_url": prior.get("feed_url", source["feed_urls"][0]),
+                    "items": prior.get("items", []),
+                })
+                continue
             raise ValueError(f"Unable to fetch feed for {source['name']}")
 
         items = parse_feed(feed_content, limit)
@@ -177,7 +218,8 @@ def main():
     parser.add_argument("--limit", type=int, default=3)
     args = parser.parse_args()
 
-    sources = build_sources(args.limit)
+    previous = load_previous(args.output)
+    sources = build_sources(args.limit, previous)
     write_output(args.output, sources)
     print(f"Wrote {len(sources)} sources to {args.output}")
 
