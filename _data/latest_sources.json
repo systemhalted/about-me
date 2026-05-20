@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-05-19T06:20:29Z",
+  "updated_at": "2026-05-20T06:19:47Z",
   "sources": [
     {
       "id": "systemhalted",
       "name": "System Halted",
       "url": "https://systemhalted.in",
-      "feed_url": "https://systemhalted.in/feed",
+      "feed_url": "https://systemhalted.in/feed.xml",
       "items": [
         {
           "title": "Saving Private Notes",
