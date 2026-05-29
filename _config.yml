@@ -29,6 +29,20 @@ knowledge:
         - Deep dives on product, engineering, and internet culture.
         - Opinionated essays with references and threads to follow.
       show_in_header: false
+    - name: Jekyll Themes
+      url: https://systemhalted.in/themes/
+      title: palette
+      type: solid
+      card-title: Open source
+      summary: Jekyll themes I've built and published as Ruby gems.
+      tags:
+        - jekyll
+        - themes
+        - open-source
+      highlights:
+        - Three published gem themes, each with a live demo and one-line install.
+        - Includes the theme that powers systemhalted.in.
+      show_in_header: false
     - name: Palak Mathur on Substack
       url: https://palakmathur.substack.com
       title: pen-nib
