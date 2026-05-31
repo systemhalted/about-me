@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-30T05:56:13Z",
+  "updated_at": "2026-05-31T06:35:18Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -8,19 +8,19 @@
       "feed_url": "https://systemhalted.in/feed.xml",
       "items": [
         {
+          "title": "Java Generics: The Cost of Type Erasure",
+          "url": "https://systemhalted.in/2026/05/31/java-generics-type-erasure/",
+          "published": "2026-05-31T00:00:00Z"
+        },
+        {
+          "title": "Renaming a Linux User Without Losing Your Setup",
+          "url": "https://systemhalted.in/2026/05/30/renaming-a-linux-user-without-losing-your-setup/",
+          "published": "2026-05-30T11:00:00Z"
+        },
+        {
           "title": "Saving Private Notes",
           "url": "https://systemhalted.in/2026/05/08/saving-private-notes/",
           "published": "2026-05-08T00:00:00Z"
-        },
-        {
-          "title": "Insight Agents and the End of Dashboard-Driven Analytics",
-          "url": "https://systemhalted.in/2026/02/06/insight-agents-end-of-dashboards/",
-          "published": "2026-02-06T00:00:00Z"
-        },
-        {
-          "title": "Part 8: Big Decimal Rounding Modes - Why HALF_UP Isn\u2019t Always the Answer",
-          "url": "https://systemhalted.in/2026/02/05/rounding-modes-why-half-up-isnt-always-the-answer/",
-          "published": "2026-02-05T00:00:00Z"
         }
       ]
     },
