@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-18T07:09:44Z",
+  "updated_at": "2026-06-19T07:29:24Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -54,6 +54,11 @@
       "feed_url": "https://www.goodreads.com/user/updates_rss/1863824",
       "items": [
         {
+          "title": "Palak added 'Take Me to Your Leader: Perspectives on Your First Alien Encounter'",
+          "url": "https://www.goodreads.com/review/show/8696560980",
+          "published": "2026-06-18T13:11:12Z"
+        },
+        {
           "title": "Palak added 'Open'",
           "url": "https://www.goodreads.com/review/show/4311492678",
           "published": "2026-04-25T04:48:00Z"
@@ -62,11 +67,6 @@
           "title": "Palak is currently reading 'Land of Dreams'",
           "url": "https://www.goodreads.com/review/show/8424935957",
           "published": "2026-03-10T02:59:22Z"
-        },
-        {
-          "title": "Palak wants to read 'Once Upon a Prime: The Wondrous Connections Between Mathematics and Literature'",
-          "url": "https://www.goodreads.com/review/show/8370023979",
-          "published": "2026-02-18T16:03:28Z"
         }
       ]
     }
