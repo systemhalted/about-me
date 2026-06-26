@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-25T06:19:44Z",
+  "updated_at": "2026-06-26T06:29:37Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed.xml",
       "items": [
+        {
+          "title": "Git Worktree and the Myth of a Single Working Directory",
+          "url": "https://systemhalted.in/2026/06/25/git-worktree/",
+          "published": "2026-06-25T00:00:00Z"
+        },
         {
           "title": "Types Check Shape, Tests Check Behaviour",
           "url": "https://systemhalted.in/2026/06/21/types-check-shape-tests-check-behaviour/",
@@ -16,11 +21,6 @@
           "title": "Java Generics: The Cost of Type Erasure",
           "url": "https://systemhalted.in/2026/05/31/java-generics-type-erasure/",
           "published": "2026-05-31T00:00:00Z"
-        },
-        {
-          "title": "Renaming a Linux User Without Losing Your Setup",
-          "url": "https://systemhalted.in/2026/05/30/renaming-a-linux-user-without-losing-your-setup/",
-          "published": "2026-05-30T11:00:00Z"
         }
       ]
     },
@@ -54,6 +54,11 @@
       "feed_url": "https://www.goodreads.com/user/updates_rss/1863824",
       "items": [
         {
+          "title": "Palak added 'A Room in Bombay: A Memoir'",
+          "url": "https://www.goodreads.com/review/show/8709244164",
+          "published": "2026-06-25T23:11:28Z"
+        },
+        {
           "title": "Palak finished reading 'The Diaries of Franz Kafka'",
           "url": "https://www.goodreads.com/review/show/5897910657",
           "published": "2026-06-23T04:28:12Z"
@@ -62,11 +67,6 @@
           "title": "Palak finished reading 'On Writing Well: The Classic Guide to Writing Nonfiction'",
           "url": "https://www.goodreads.com/review/show/6543105014",
           "published": "2026-06-23T04:27:59Z"
-        },
-        {
-          "title": "Palak wants to read 'The Anarchy: The East India Company, Corporate Violence, and the Pillage of an Empire'",
-          "url": "https://www.goodreads.com/review/show/5530901287",
-          "published": "2026-06-23T04:27:37Z"
         }
       ]
     }
