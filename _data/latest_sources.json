@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-02T06:10:09Z",
+  "updated_at": "2026-07-03T06:04:07Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed.xml",
       "items": [
+        {
+          "title": "Property-Based Testing: Testing Rules Instead of Examples",
+          "url": "https://systemhalted.in/2026/07/02/property-based-testing/",
+          "published": "2026-07-02T00:00:00Z"
+        },
         {
           "title": "Git Worktree and the Myth of a Single Working Directory",
           "url": "https://systemhalted.in/2026/06/25/git-worktree/",
@@ -16,11 +21,6 @@
           "title": "Types Check Shape, Tests Check Behaviour",
           "url": "https://systemhalted.in/2026/06/21/types-check-shape-tests-check-behaviour/",
           "published": "2026-06-21T00:00:00Z"
-        },
-        {
-          "title": "Java Generics: The Cost of Type Erasure",
-          "url": "https://systemhalted.in/2026/05/31/java-generics-type-erasure/",
-          "published": "2026-05-31T00:00:00Z"
         }
       ]
     },
