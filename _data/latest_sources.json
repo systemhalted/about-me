@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-03T06:04:07Z",
+  "updated_at": "2026-07-04T05:55:25Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed.xml",
       "items": [
+        {
+          "title": "What Sits Underneath the Agent Loops Post",
+          "url": "https://systemhalted.in/2026/07/03/what-sits-underneath-the-agent-loops-post/",
+          "published": "2026-07-03T00:00:00Z"
+        },
         {
           "title": "Property-Based Testing: Testing Rules Instead of Examples",
           "url": "https://systemhalted.in/2026/07/02/property-based-testing/",
@@ -16,11 +21,6 @@
           "title": "Git Worktree and the Myth of a Single Working Directory",
           "url": "https://systemhalted.in/2026/06/25/git-worktree/",
           "published": "2026-06-25T00:00:00Z"
-        },
-        {
-          "title": "Types Check Shape, Tests Check Behaviour",
-          "url": "https://systemhalted.in/2026/06/21/types-check-shape-tests-check-behaviour/",
-          "published": "2026-06-21T00:00:00Z"
         }
       ]
     },
