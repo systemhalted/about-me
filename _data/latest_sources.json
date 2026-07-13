@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-12T05:38:31Z",
+  "updated_at": "2026-07-13T05:48:46Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed.xml",
       "items": [
+        {
+          "title": "JPMS and Cargo: Two Answers to the Same Problem",
+          "url": "https://systemhalted.in/2026/07/12/jpms-and-cargo-two-answers-to-the-same-problem/",
+          "published": "2026-07-12T00:00:00Z"
+        },
         {
           "title": "Adopting Agent Loops in Order",
           "url": "https://systemhalted.in/2026/07/10/adopting-agent-loops-in-order/",
@@ -16,11 +21,6 @@
           "title": "What Sits Underneath the Agent Loops Post",
           "url": "https://systemhalted.in/2026/07/03/what-sits-underneath-the-agent-loops-post/",
           "published": "2026-07-03T00:00:00Z"
-        },
-        {
-          "title": "Property-Based Testing: Testing Rules Instead of Examples",
-          "url": "https://systemhalted.in/2026/07/02/property-based-testing/",
-          "published": "2026-07-02T00:00:00Z"
         }
       ]
     },
