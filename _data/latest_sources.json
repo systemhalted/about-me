@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-15T05:10:06Z",
+  "updated_at": "2026-07-16T05:20:18Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -54,6 +54,11 @@
       "feed_url": "https://www.goodreads.com/user/updates_rss/1863824",
       "items": [
         {
+          "title": "Palak is currently reading '22 Cells in Nuremberg : In the Nazi Mind'",
+          "url": "https://www.goodreads.com/review/show/8773988964",
+          "published": "2026-07-16T02:31:43Z"
+        },
+        {
           "title": "Palak has read 'The Wrinkle in Time Trilogy'",
           "url": "https://www.goodreads.com/review/show/8768198153",
           "published": "2026-07-14T01:45:39Z"
@@ -62,11 +67,6 @@
           "title": "Palak is currently reading 'The Sky Beneath Her'",
           "url": "https://www.goodreads.com/review/show/8768180348",
           "published": "2026-07-14T01:39:10Z"
-        },
-        {
-          "title": "Palak added 'A Room in Bombay: A Memoir'",
-          "url": "https://www.goodreads.com/review/show/8709244164",
-          "published": "2026-06-25T23:11:28Z"
         }
       ]
     }
