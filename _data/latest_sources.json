@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-17T05:23:00Z",
+  "updated_at": "2026-07-18T05:05:13Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -8,19 +8,19 @@
       "feed_url": "https://systemhalted.in/feed.xml",
       "items": [
         {
+          "title": "Agent Loops as a Team Diagnostic",
+          "url": "https://systemhalted.in/2026/07/17/agent-loops-as-a-team-diagnostic/",
+          "published": "2026-07-17T00:00:00Z"
+        },
+        {
+          "title": "The 2D\u21941D Problem in Text Editors",
+          "url": "https://systemhalted.in/2026/07/17/the-2d-1d-problem-in-text-editors/",
+          "published": "2026-07-17T00:00:00Z"
+        },
+        {
           "title": "JPMS and Cargo: Two Answers to the Same Problem",
           "url": "https://systemhalted.in/2026/07/12/jpms-and-cargo-two-answers-to-the-same-problem/",
           "published": "2026-07-12T00:00:00Z"
-        },
-        {
-          "title": "Adopting Agent Loops in Order",
-          "url": "https://systemhalted.in/2026/07/10/adopting-agent-loops-in-order/",
-          "published": "2026-07-10T00:00:00Z"
-        },
-        {
-          "title": "What Sits Underneath the Agent Loops Post",
-          "url": "https://systemhalted.in/2026/07/03/what-sits-underneath-the-agent-loops-post/",
-          "published": "2026-07-03T00:00:00Z"
         }
       ]
     },
