@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-19T05:31:56Z",
+  "updated_at": "2026-07-20T05:49:52Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed.xml",
       "items": [
+        {
+          "title": "[Book Review] Miner Town: Awakening (Miner Town, #1) by Ankit Saxena",
+          "url": "https://systemhalted.in/2026/07/20/book-review-miner-town-awakening-by-ankit-saxena/",
+          "published": "2026-07-20T00:00:00Z"
+        },
         {
           "title": "Agent Loops as a Team Diagnostic",
           "url": "https://systemhalted.in/2026/07/17/agent-loops-as-a-team-diagnostic/",
@@ -16,11 +21,6 @@
           "title": "The 2D\u21941D Problem in Text Editors",
           "url": "https://systemhalted.in/2026/07/17/the-2d-1d-problem-in-text-editors/",
           "published": "2026-07-17T00:00:00Z"
-        },
-        {
-          "title": "JPMS and Cargo: Two Answers to the Same Problem",
-          "url": "https://systemhalted.in/2026/07/12/jpms-and-cargo-two-answers-to-the-same-problem/",
-          "published": "2026-07-12T00:00:00Z"
         }
       ]
     },
@@ -54,6 +54,11 @@
       "feed_url": "https://www.goodreads.com/user/updates_rss/1863824",
       "items": [
         {
+          "title": "Palak added 'Miner Town: Awakening'",
+          "url": "https://www.goodreads.com/review/show/8785104844",
+          "published": "2026-07-20T04:16:52Z"
+        },
+        {
           "title": "Palak is currently reading '22 Cells in Nuremberg : In the Nazi Mind'",
           "url": "https://www.goodreads.com/review/show/8773988964",
           "published": "2026-07-16T02:31:43Z"
@@ -62,11 +67,6 @@
           "title": "Palak has read 'The Wrinkle in Time Trilogy'",
           "url": "https://www.goodreads.com/review/show/8768198153",
           "published": "2026-07-14T01:45:39Z"
-        },
-        {
-          "title": "Palak is currently reading 'The Sky Beneath Her'",
-          "url": "https://www.goodreads.com/review/show/8768180348",
-          "published": "2026-07-14T01:39:10Z"
         }
       ]
     }
