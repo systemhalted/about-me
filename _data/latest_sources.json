@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T05:29:15Z",
+  "updated_at": "2026-07-23T05:34:32Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -8,19 +8,19 @@
       "feed_url": "https://systemhalted.in/feed.xml",
       "items": [
         {
-          "title": "Review: Software Malpractice in the Age of AI",
-          "url": "https://systemhalted.in/2026/07/21/review-software-malpractice-in-the-age-of-ai/",
-          "published": "2026-07-21T00:00:00Z"
+          "title": "Removing a Package and Purging Its Traces",
+          "url": "https://systemhalted.in/2026/07/23/removing-a-package-and-purging-its-traces/",
+          "published": "2026-07-23T05:30:00Z"
         },
         {
-          "title": "[Book Review] Miner Town: Awakening (Miner Town, #1) by Ankit Saxena",
-          "url": "https://systemhalted.in/2026/07/20/book-review-miner-town-awakening-by-ankit-saxena/",
-          "published": "2026-07-20T00:00:00Z"
+          "title": "Running Ghostty on a 2012 GPU",
+          "url": "https://systemhalted.in/2026/07/23/running-ghostty-on-a-2012-gpu/",
+          "published": "2026-07-23T04:30:00Z"
         },
         {
-          "title": "Agent Loops as a Team Diagnostic",
-          "url": "https://systemhalted.in/2026/07/17/agent-loops-as-a-team-diagnostic/",
-          "published": "2026-07-17T00:00:00Z"
+          "title": "Switching to WezTerm",
+          "url": "https://systemhalted.in/2026/07/22/wezterm-setup/",
+          "published": "2026-07-22T14:00:00Z"
         }
       ]
     },
