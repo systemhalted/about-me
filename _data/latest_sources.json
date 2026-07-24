@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T05:34:32Z",
+  "updated_at": "2026-07-24T05:29:52Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed.xml",
       "items": [
+        {
+          "title": "My Naming Philosophy",
+          "url": "https://systemhalted.in/2026/07/23/my-naming-philosophy/",
+          "published": "2026-07-23T07:00:00Z"
+        },
         {
           "title": "Removing a Package and Purging Its Traces",
           "url": "https://systemhalted.in/2026/07/23/removing-a-package-and-purging-its-traces/",
@@ -16,11 +21,6 @@
           "title": "Running Ghostty on a 2012 GPU",
           "url": "https://systemhalted.in/2026/07/23/running-ghostty-on-a-2012-gpu/",
           "published": "2026-07-23T04:30:00Z"
-        },
-        {
-          "title": "Switching to WezTerm",
-          "url": "https://systemhalted.in/2026/07/22/wezterm-setup/",
-          "published": "2026-07-22T14:00:00Z"
         }
       ]
     },
