@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-24T05:29:52Z",
+  "updated_at": "2026-07-25T05:24:07Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -8,19 +8,19 @@
       "feed_url": "https://systemhalted.in/feed.xml",
       "items": [
         {
+          "title": "Devanagari in Unicode",
+          "url": "https://systemhalted.in/2026/07/25/unicode-devanagari/",
+          "published": "2026-07-25T03:30:00Z"
+        },
+        {
+          "title": "Semantic Networks as Search Spaces",
+          "url": "https://systemhalted.in/2026/07/24/semantic-networks-as-search-spaces/",
+          "published": "2026-07-24T14:30:00Z"
+        },
+        {
           "title": "My Naming Philosophy",
           "url": "https://systemhalted.in/2026/07/23/my-naming-philosophy/",
           "published": "2026-07-23T07:00:00Z"
-        },
-        {
-          "title": "Removing a Package and Purging Its Traces",
-          "url": "https://systemhalted.in/2026/07/23/removing-a-package-and-purging-its-traces/",
-          "published": "2026-07-23T05:30:00Z"
-        },
-        {
-          "title": "Running Ghostty on a 2012 GPU",
-          "url": "https://systemhalted.in/2026/07/23/running-ghostty-on-a-2012-gpu/",
-          "published": "2026-07-23T04:30:00Z"
         }
       ]
     },
