@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-26T05:41:42Z",
+  "updated_at": "2026-07-27T06:00:18Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed.xml",
       "items": [
+        {
+          "title": "Diagrams as Text",
+          "url": "https://systemhalted.in/2026/07/26/diagrams-as-text/",
+          "published": "2026-07-26T00:00:00Z"
+        },
         {
           "title": "Devanagari in Unicode",
           "url": "https://systemhalted.in/2026/07/25/unicode-devanagari/",
@@ -16,11 +21,6 @@
           "title": "Semantic Networks as Search Spaces",
           "url": "https://systemhalted.in/2026/07/24/semantic-networks-as-search-spaces/",
           "published": "2026-07-24T14:30:00Z"
-        },
-        {
-          "title": "My Naming Philosophy",
-          "url": "https://systemhalted.in/2026/07/23/my-naming-philosophy/",
-          "published": "2026-07-23T07:00:00Z"
         }
       ]
     },
