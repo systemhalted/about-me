@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-28T05:25:10Z",
+  "updated_at": "2026-07-29T05:31:29Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed.xml",
       "items": [
+        {
+          "title": "Is an Anthill Conscious?",
+          "url": "https://systemhalted.in/2026/07/28/is-an-anthill-conscious/",
+          "published": "2026-07-28T00:00:00Z"
+        },
         {
           "title": "Diagrams as Text",
           "url": "https://systemhalted.in/2026/07/26/diagrams-as-text/",
@@ -16,11 +21,6 @@
           "title": "Devanagari in Unicode",
           "url": "https://systemhalted.in/2026/07/25/unicode-devanagari/",
           "published": "2026-07-25T00:00:00Z"
-        },
-        {
-          "title": "Semantic Networks as Search Spaces",
-          "url": "https://systemhalted.in/2026/07/24/semantic-networks-as-search-spaces/",
-          "published": "2026-07-24T14:30:00Z"
         }
       ]
     },
