@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-31T05:45:25Z",
+  "updated_at": "2026-08-01T05:36:00Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed.xml",
       "items": [
+        {
+          "title": "Review: An Agile Ethical/Legal Model for AI and Robotics Governance",
+          "url": "https://systemhalted.in/2026/07/31/review-agile-ethical-legal-model-ai-robotics-governance/",
+          "published": "2026-07-31T00:00:00Z"
+        },
         {
           "title": "Is an Anthill Conscious?",
           "url": "https://systemhalted.in/2026/07/28/is-an-anthill-conscious/",
@@ -16,11 +21,6 @@
           "title": "Diagrams as Text",
           "url": "https://systemhalted.in/2026/07/26/diagrams-as-text/",
           "published": "2026-07-26T00:00:00Z"
-        },
-        {
-          "title": "Devanagari in Unicode",
-          "url": "https://systemhalted.in/2026/07/25/unicode-devanagari/",
-          "published": "2026-07-25T00:00:00Z"
         }
       ]
     },
