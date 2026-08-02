@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-01T05:36:00Z",
+  "updated_at": "2026-08-02T05:36:52Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed.xml",
       "items": [
+        {
+          "title": "Why Doesn\u2019t Wisdom Accumulate?",
+          "url": "https://systemhalted.in/2026/08/02/wisdom-accumulation/",
+          "published": "2026-08-02T00:00:00Z"
+        },
         {
           "title": "Review: An Agile Ethical/Legal Model for AI and Robotics Governance",
           "url": "https://systemhalted.in/2026/07/31/review-agile-ethical-legal-model-ai-robotics-governance/",
@@ -16,11 +21,6 @@
           "title": "Is an Anthill Conscious?",
           "url": "https://systemhalted.in/2026/07/28/is-an-anthill-conscious/",
           "published": "2026-07-28T00:00:00Z"
-        },
-        {
-          "title": "Diagrams as Text",
-          "url": "https://systemhalted.in/2026/07/26/diagrams-as-text/",
-          "published": "2026-07-26T00:00:00Z"
         }
       ]
     },
