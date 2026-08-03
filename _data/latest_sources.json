@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-02T05:36:52Z",
+  "updated_at": "2026-08-03T05:52:30Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -8,19 +8,19 @@
       "feed_url": "https://systemhalted.in/feed.xml",
       "items": [
         {
+          "title": "Review: How Technological Advances Can Reveal Rights",
+          "url": "https://systemhalted.in/2026/08/02/review-how-technological-advances-can-reveal-rights/",
+          "published": "2026-08-02T18:00:00Z"
+        },
+        {
           "title": "Why Doesn\u2019t Wisdom Accumulate?",
           "url": "https://systemhalted.in/2026/08/02/wisdom-accumulation/",
-          "published": "2026-08-02T00:00:00Z"
+          "published": "2026-08-02T02:30:00Z"
         },
         {
           "title": "Review: An Agile Ethical/Legal Model for AI and Robotics Governance",
           "url": "https://systemhalted.in/2026/07/31/review-agile-ethical-legal-model-ai-robotics-governance/",
           "published": "2026-07-31T00:00:00Z"
-        },
-        {
-          "title": "Is an Anthill Conscious?",
-          "url": "https://systemhalted.in/2026/07/28/is-an-anthill-conscious/",
-          "published": "2026-07-28T00:00:00Z"
         }
       ]
     },
