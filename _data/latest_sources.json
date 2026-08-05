@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-04T05:25:08Z",
+  "updated_at": "2026-08-05T05:24:56Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed.xml",
       "items": [
+        {
+          "title": "What UNO Teaches About Rule-Based Agents",
+          "url": "https://systemhalted.in/2026/08/04/what-uno-teaches-about-rule-based-agents/",
+          "published": "2026-08-04T00:00:00Z"
+        },
         {
           "title": "Review: How Technological Advances Can Reveal Rights",
           "url": "https://systemhalted.in/2026/08/02/review-how-technological-advances-can-reveal-rights/",
@@ -16,11 +21,6 @@
           "title": "Why Doesn\u2019t Wisdom Accumulate?",
           "url": "https://systemhalted.in/2026/08/02/wisdom-accumulation/",
           "published": "2026-08-02T02:30:00Z"
-        },
-        {
-          "title": "Review: An Agile Ethical/Legal Model for AI and Robotics Governance",
-          "url": "https://systemhalted.in/2026/07/31/review-agile-ethical-legal-model-ai-robotics-governance/",
-          "published": "2026-07-31T00:00:00Z"
         }
       ]
     },
