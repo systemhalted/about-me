@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-07T04:32:51Z",
+  "updated_at": "2026-08-08T03:43:52Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed.xml",
       "items": [
+        {
+          "title": "Naming as Design: Refactoring an API Model",
+          "url": "https://systemhalted.in/2026/08/07/naming-as-design-refactoring-an-api-model/",
+          "published": "2026-08-07T05:30:00Z"
+        },
         {
           "title": "What UNO Teaches About Rule-Based Agents",
           "url": "https://systemhalted.in/2026/08/04/what-uno-teaches-about-rule-based-agents/",
@@ -16,11 +21,6 @@
           "title": "Review: How Technological Advances Can Reveal Rights",
           "url": "https://systemhalted.in/2026/08/02/review-how-technological-advances-can-reveal-rights/",
           "published": "2026-08-02T18:00:00Z"
-        },
-        {
-          "title": "Why Doesn\u2019t Wisdom Accumulate?",
-          "url": "https://systemhalted.in/2026/08/02/wisdom-accumulation/",
-          "published": "2026-08-02T02:30:00Z"
         }
       ]
     },
@@ -54,14 +54,14 @@
       "feed_url": "https://www.goodreads.com/user/updates_rss/1863824",
       "items": [
         {
+          "title": "Palak added '\u092e\u0941\u0938\u093e\u092b\u093f\u0930 Cafe'",
+          "url": "https://www.goodreads.com/review/show/8839031177",
+          "published": "2026-08-07T13:05:38Z"
+        },
+        {
           "title": "Palak added 'Miner Town: Awakening'",
           "url": "https://www.goodreads.com/review/show/8785104844",
           "published": "2026-07-20T04:16:52Z"
-        },
-        {
-          "title": "Palak is currently reading '22 Cells in Nuremberg : In the Nazi Mind'",
-          "url": "https://www.goodreads.com/review/show/8773988964",
-          "published": "2026-07-16T02:31:43Z"
         }
       ]
     }
