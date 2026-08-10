@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-09T03:52:52Z",
+  "updated_at": "2026-08-10T04:07:12Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed.xml",
       "items": [
+        {
+          "title": "Review: Studying the Wisdom of Crowds at Scale",
+          "url": "https://systemhalted.in/2026/08/09/review-studying-wisdom-of-crowds-at-scale/",
+          "published": "2026-08-09T00:00:00Z"
+        },
         {
           "title": "Naming as Design: Refactoring an API Model",
           "url": "https://systemhalted.in/2026/08/07/naming-as-design-refactoring-an-api-model/",
@@ -16,11 +21,6 @@
           "title": "What UNO Teaches About Rule-Based Agents",
           "url": "https://systemhalted.in/2026/08/04/what-uno-teaches-about-rule-based-agents/",
           "published": "2026-08-04T00:00:00Z"
-        },
-        {
-          "title": "Review: How Technological Advances Can Reveal Rights",
-          "url": "https://systemhalted.in/2026/08/02/review-how-technological-advances-can-reveal-rights/",
-          "published": "2026-08-02T18:00:00Z"
         }
       ]
     },
