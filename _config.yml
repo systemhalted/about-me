@@ -57,6 +57,20 @@ knowledge:
         - Short stories, poetry, and narrative essays.
         - Curated portfolio of creative work.
       show_in_header: false
+    - name: Kartavya Path
+      url: https://www.linkedin.com/newsletters/7211363300905738240/
+      title: linkedin
+      type: brands
+      card-title: LinkedIn newsletter
+      summary: Short essays on leadership, management, and the long road, syndicated from System Halted.
+      tags:
+        - leadership
+        - management
+        - newsletter
+      highlights:
+        - Selected essays cross-posted from System Halted.
+        - Early issues archived at systemhalted.in/kartavya-path/.
+      show_in_header: false
     - name: Nukkad Shukkad Podcast
       url: https://podcasts.apple.com/us/podcast/nukkad-shukkad/id1537261609
       title: podcast
