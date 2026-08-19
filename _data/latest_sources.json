@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-18T03:08:41Z",
+  "updated_at": "2026-08-19T03:11:06Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed.xml",
       "items": [
+        {
+          "title": "AI in People Management",
+          "url": "https://systemhalted.in/2026/08/18/ai-in-people-management/",
+          "published": "2026-08-18T00:00:00Z"
+        },
         {
           "title": "Free Will, AI, and the Limits of Intentionality",
           "url": "https://systemhalted.in/2026/08/11/free-will-ai-and-the-limits-of-intentionality/",
@@ -16,11 +21,6 @@
           "title": "Review: Studying the Wisdom of Crowds at Scale",
           "url": "https://systemhalted.in/2026/08/09/review-studying-wisdom-of-crowds-at-scale/",
           "published": "2026-08-09T00:00:00Z"
-        },
-        {
-          "title": "Naming as Design: Refactoring an API Model",
-          "url": "https://systemhalted.in/2026/08/07/naming-as-design-refactoring-an-api-model/",
-          "published": "2026-08-07T05:30:00Z"
         }
       ]
     },
