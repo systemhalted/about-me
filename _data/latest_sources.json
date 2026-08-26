@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-25T03:12:48Z",
+  "updated_at": "2026-08-26T03:18:41Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed.xml",
       "items": [
+        {
+          "title": "Resource Integrity Belongs to the Resource, Not the API",
+          "url": "https://systemhalted.in/2026/08/25/resource-integrity/",
+          "published": "2026-08-25T00:00:00Z"
+        },
         {
           "title": "AI Governance Needs Accountability, Not Just Principles",
           "url": "https://systemhalted.in/2026/08/21/ai-governance-needs-accountability-not-just-principles/",
@@ -16,11 +21,6 @@
           "title": "AI in People Management",
           "url": "https://systemhalted.in/2026/08/18/ai-in-people-management/",
           "published": "2026-08-18T00:00:00Z"
-        },
-        {
-          "title": "Free Will, AI, and the Limits of Intentionality",
-          "url": "https://systemhalted.in/2026/08/11/free-will-ai-and-the-limits-of-intentionality/",
-          "published": "2026-08-11T00:00:00Z"
         }
       ]
     },
