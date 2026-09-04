@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-03T07:11:07Z",
+  "updated_at": "2026-09-04T07:14:26Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed.xml",
       "items": [
+        {
+          "title": "GTIDs, Kafka Consumer Offsets, and What a Recovery Checkpoint Really Means",
+          "url": "https://systemhalted.in/2026/09/03/gtid-kafka-dr/",
+          "published": "2026-09-03T00:00:00Z"
+        },
         {
           "title": "Resource Integrity Belongs to the Resource, Not the API",
           "url": "https://systemhalted.in/2026/08/25/resource-integrity/",
@@ -16,11 +21,6 @@
           "title": "AI Governance Needs Accountability, Not Just Principles",
           "url": "https://systemhalted.in/2026/08/21/ai-governance-needs-accountability-not-just-principles/",
           "published": "2026-08-21T00:00:00Z"
-        },
-        {
-          "title": "AI in People Management",
-          "url": "https://systemhalted.in/2026/08/18/ai-in-people-management/",
-          "published": "2026-08-18T00:00:00Z"
         }
       ]
     },
@@ -54,14 +54,14 @@
       "feed_url": "https://www.goodreads.com/user/updates_rss/1863824",
       "items": [
         {
+          "title": "Palak finished reading 'The Silk Roads: A New History of the World'",
+          "url": "https://www.goodreads.com/review/show/8916103503",
+          "published": "2026-09-03T17:55:52Z"
+        },
+        {
           "title": "Palak added '\u092e\u0941\u0938\u093e\u092b\u093f\u0930 Cafe'",
           "url": "https://www.goodreads.com/review/show/8839031177",
           "published": "2026-08-07T13:05:38Z"
-        },
-        {
-          "title": "Palak added 'Miner Town: Awakening'",
-          "url": "https://www.goodreads.com/review/show/8785104844",
-          "published": "2026-07-20T04:16:52Z"
         }
       ]
     }
