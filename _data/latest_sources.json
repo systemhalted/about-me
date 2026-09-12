@@ -1,26 +1,26 @@
 {
-  "updated_at": "2026-09-11T07:17:43Z",
+  "updated_at": "2026-09-12T07:10:06Z",
   "sources": [
     {
       "id": "systemhalted",
       "name": "System Halted",
       "url": "https://systemhalted.in",
-      "feed_url": "https://systemhalted.in/feed.xml",
+      "feed_url": "https://systemhalted.in/feed",
       "items": [
         {
-          "title": "GTIDs, Kafka Consumer Offsets, and What a Recovery Checkpoint Really Means",
-          "url": "https://systemhalted.in/2026/09/03/gtid-kafka-dr/",
-          "published": "2026-09-03T00:00:00Z"
+          "title": "Search and Keyboard Shortcuts on This Blog",
+          "url": "https://systemhalted.in/2026/09/12/search-and-keyboard-shortcuts/",
+          "published": "2026-09-12T00:00:00Z"
         },
         {
-          "title": "Resource Integrity Belongs to the Resource, Not the API",
-          "url": "https://systemhalted.in/2026/08/25/resource-integrity/",
-          "published": "2026-08-25T00:00:00Z"
+          "title": "Why I love Omarchy",
+          "url": "https://systemhalted.in/2026/09/11/omarchy/",
+          "published": "2026-09-11T00:00:00Z"
         },
         {
-          "title": "AI Governance Needs Accountability, Not Just Principles",
-          "url": "https://systemhalted.in/2026/08/21/ai-governance-needs-accountability-not-just-principles/",
-          "published": "2026-08-21T00:00:00Z"
+          "title": "Simplifying SystemHalted.in",
+          "url": "https://systemhalted.in/2026/09/11/simplifying-systemhalted/",
+          "published": "2026-09-11T00:00:00Z"
         }
       ]
     },
