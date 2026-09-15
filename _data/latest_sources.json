@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-14T07:54:41Z",
+  "updated_at": "2026-09-15T07:45:48Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -8,19 +8,19 @@
       "feed_url": "https://systemhalted.in/feed",
       "items": [
         {
+          "title": "Austin\u2019s Vibe",
+          "url": "https://systemhalted.in/2026/09/14/austin-vibe/",
+          "published": "2026-09-14T00:00:00Z"
+        },
+        {
+          "title": "A Sunday Drive to Austin",
+          "url": "https://systemhalted.in/2026/09/13/dallas-to-austin/",
+          "published": "2026-09-13T00:00:00Z"
+        },
+        {
           "title": "Search and Keyboard Shortcuts on This Blog",
           "url": "https://systemhalted.in/2026/09/12/search-and-keyboard-shortcuts/",
           "published": "2026-09-12T00:00:00Z"
-        },
-        {
-          "title": "Why I love Omarchy",
-          "url": "https://systemhalted.in/2026/09/11/omarchy/",
-          "published": "2026-09-11T00:00:00Z"
-        },
-        {
-          "title": "Simplifying SystemHalted.in",
-          "url": "https://systemhalted.in/2026/09/11/simplifying-systemhalted/",
-          "published": "2026-09-11T00:00:00Z"
         }
       ]
     },
