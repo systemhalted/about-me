@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-16T07:42:04Z",
+  "updated_at": "2026-09-17T07:41:23Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed",
       "items": [
+        {
+          "title": "Observing the world unfold at Starbucks",
+          "url": "https://systemhalted.in/2026/09/15/observing-starbucks/",
+          "published": "2026-09-15T00:00:00Z"
+        },
         {
           "title": "Austin\u2019s Vibe",
           "url": "https://systemhalted.in/2026/09/14/austin-vibe/",
@@ -16,11 +21,6 @@
           "title": "A Sunday Drive to Austin",
           "url": "https://systemhalted.in/2026/09/13/dallas-to-austin/",
           "published": "2026-09-13T00:00:00Z"
-        },
-        {
-          "title": "Search and Keyboard Shortcuts on This Blog",
-          "url": "https://systemhalted.in/2026/09/12/search-and-keyboard-shortcuts/",
-          "published": "2026-09-12T00:00:00Z"
         }
       ]
     },
