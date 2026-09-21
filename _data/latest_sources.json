@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-20T07:45:10Z",
+  "updated_at": "2026-09-21T07:58:34Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed",
       "items": [
+        {
+          "title": "Http Get, Open AI Agents and What it tells about API Governance",
+          "url": "https://systemhalted.in/2026/09/20/http-get/",
+          "published": "2026-09-20T00:00:00Z"
+        },
         {
           "title": "Observing the world unfold at Starbucks",
           "url": "https://systemhalted.in/2026/09/15/observing-starbucks/",
@@ -16,11 +21,6 @@
           "title": "Austin\u2019s Vibe",
           "url": "https://systemhalted.in/2026/09/14/austin-vibe/",
           "published": "2026-09-14T00:00:00Z"
-        },
-        {
-          "title": "A Sunday Drive to Austin",
-          "url": "https://systemhalted.in/2026/09/13/dallas-to-austin/",
-          "published": "2026-09-13T00:00:00Z"
         }
       ]
     },
