@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T07:46:14Z",
+  "updated_at": "2026-09-24T07:36:36Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed",
       "items": [
+        {
+          "title": "Java 28 Preview: Value Objects Bring Identity-Free Data to Java",
+          "url": "https://systemhalted.in/2026/09/23/java28-value-objects/",
+          "published": "2026-09-23T00:00:00Z"
+        },
         {
           "title": "Http Get, Open AI Agents and What it tells about API Governance",
           "url": "https://systemhalted.in/2026/09/20/http-get/",
@@ -16,11 +21,6 @@
           "title": "Observing the world unfold at Starbucks",
           "url": "https://systemhalted.in/2026/09/15/observing-starbucks/",
           "published": "2026-09-15T00:00:00Z"
-        },
-        {
-          "title": "Austin\u2019s Vibe",
-          "url": "https://systemhalted.in/2026/09/14/austin-vibe/",
-          "published": "2026-09-14T00:00:00Z"
         }
       ]
     },
