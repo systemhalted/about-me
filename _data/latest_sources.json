@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-30T08:35:42Z",
+  "updated_at": "2026-10-01T08:57:51Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed",
       "items": [
+        {
+          "title": "Who Gets to Write the Rules of the Global Order?",
+          "url": "https://systemhalted.in/2026/09/30/rules-of-global-order/",
+          "published": "2026-09-30T00:00:00Z"
+        },
         {
           "title": "How Big Pickle Performed",
           "url": "https://systemhalted.in/2026/09/29/how-big-pickle-performed/",
@@ -16,11 +21,6 @@
           "title": "Publishing Blog using Org Mode and Emacs",
           "url": "https://systemhalted.in/2026/09/26/publishing-blog-using-org-mode-and-emacs/",
           "published": "2026-09-26T00:00:00Z"
-        },
-        {
-          "title": "Java 28 Preview: Value Objects Bring Identity-Free Data to Java",
-          "url": "https://systemhalted.in/2026/09/23/java28-value-objects/",
-          "published": "2026-09-23T00:00:00Z"
         }
       ]
     },
