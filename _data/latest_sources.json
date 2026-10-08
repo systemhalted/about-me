@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-07T08:40:58Z",
+  "updated_at": "2026-10-08T08:59:29Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -54,14 +54,19 @@
       "feed_url": "https://www.goodreads.com/user/updates_rss/1863824",
       "items": [
         {
+          "title": "Palak is currently reading 'The Fourth Option'",
+          "url": "https://www.goodreads.com/review/show/9008174419",
+          "published": "2026-10-08T01:20:37Z"
+        },
+        {
+          "title": "Palak finished reading 'Frankenstein'",
+          "url": "https://www.goodreads.com/review/show/9008167863",
+          "published": "2026-10-08T01:18:01Z"
+        },
+        {
           "title": "Palak finished reading 'The Silk Roads: A New History of the World'",
           "url": "https://www.goodreads.com/review/show/8916103503",
           "published": "2026-09-03T17:55:52Z"
-        },
-        {
-          "title": "Palak added '\u092e\u0941\u0938\u093e\u092b\u093f\u0930 Cafe'",
-          "url": "https://www.goodreads.com/review/show/8839031177",
-          "published": "2026-08-07T13:05:38Z"
         }
       ]
     }
