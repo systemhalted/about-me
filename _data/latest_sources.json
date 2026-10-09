@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-08T08:59:29Z",
+  "updated_at": "2026-10-09T09:06:35Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -8,19 +8,19 @@
       "feed_url": "https://systemhalted.in/feed",
       "items": [
         {
+          "title": "The Immigrant's Dilemma",
+          "url": "https://systemhalted.in/2026/10/09/immigrants-dilemma/",
+          "published": "2026-10-09T00:00:00Z"
+        },
+        {
+          "title": "Nana Patekar",
+          "url": "https://systemhalted.in/2026/10/08/nana-patekar/",
+          "published": "2026-10-08T00:00:00Z"
+        },
+        {
           "title": "Who Gets to Write the Rules of the Global Order?",
           "url": "https://systemhalted.in/2026/09/30/rules-of-global-order/",
           "published": "2026-09-30T00:00:00Z"
-        },
-        {
-          "title": "How Big Pickle Performed",
-          "url": "https://systemhalted.in/2026/09/29/how-big-pickle-performed/",
-          "published": "2026-09-29T00:00:00Z"
-        },
-        {
-          "title": "Publishing Blog using Org Mode and Emacs",
-          "url": "https://systemhalted.in/2026/09/26/publishing-blog-using-org-mode-and-emacs/",
-          "published": "2026-09-26T00:00:00Z"
         }
       ]
     },
@@ -54,6 +54,11 @@
       "feed_url": "https://www.goodreads.com/user/updates_rss/1863824",
       "items": [
         {
+          "title": "Palak finished reading 'Kidnapped'",
+          "url": "https://www.goodreads.com/review/show/9010657084",
+          "published": "2026-10-09T00:26:12Z"
+        },
+        {
           "title": "Palak is currently reading 'The Fourth Option'",
           "url": "https://www.goodreads.com/review/show/9008174419",
           "published": "2026-10-08T01:20:37Z"
@@ -62,11 +67,6 @@
           "title": "Palak finished reading 'Frankenstein'",
           "url": "https://www.goodreads.com/review/show/9008167863",
           "published": "2026-10-08T01:18:01Z"
-        },
-        {
-          "title": "Palak finished reading 'The Silk Roads: A New History of the World'",
-          "url": "https://www.goodreads.com/review/show/8916103503",
-          "published": "2026-09-03T17:55:52Z"
         }
       ]
     }
