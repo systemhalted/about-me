@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T09:06:35Z",
+  "updated_at": "2026-10-10T08:30:35Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed",
       "items": [
+        {
+          "title": "teeup Beta is now available",
+          "url": "https://systemhalted.in/2026/10/10/teeup-sh-beta-release/",
+          "published": "2026-10-10T00:00:00Z"
+        },
         {
           "title": "The Immigrant's Dilemma",
           "url": "https://systemhalted.in/2026/10/09/immigrants-dilemma/",
@@ -16,11 +21,6 @@
           "title": "Nana Patekar",
           "url": "https://systemhalted.in/2026/10/08/nana-patekar/",
           "published": "2026-10-08T00:00:00Z"
-        },
-        {
-          "title": "Who Gets to Write the Rules of the Global Order?",
-          "url": "https://systemhalted.in/2026/09/30/rules-of-global-order/",
-          "published": "2026-09-30T00:00:00Z"
         }
       ]
     },
