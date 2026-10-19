@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T07:13:56Z",
+  "updated_at": "2026-10-19T07:48:11Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed",
       "items": [
+        {
+          "title": "Knowing of Something and Knowing Something",
+          "url": "https://systemhalted.in/2026/10/18/knowing/",
+          "published": "2026-10-18T00:00:00Z"
+        },
         {
           "title": "FFI and Miscompilation Bug in Rust",
           "url": "https://systemhalted.in/2026/10/16/bool-ffi-miscompilation/",
@@ -16,11 +21,6 @@
           "title": "teeup Beta is now available",
           "url": "https://systemhalted.in/2026/10/10/teeup-sh-beta-release/",
           "published": "2026-10-10T00:00:00Z"
-        },
-        {
-          "title": "The Immigrant's Dilemma",
-          "url": "https://systemhalted.in/2026/10/09/immigrants-dilemma/",
-          "published": "2026-10-09T00:00:00Z"
         }
       ]
     },
@@ -54,6 +54,11 @@
       "feed_url": "https://www.goodreads.com/user/updates_rss/1863824",
       "items": [
         {
+          "title": "Palak is currently reading 'The Black Orchid'",
+          "url": "https://www.goodreads.com/review/show/9036686355",
+          "published": "2026-10-19T01:18:10Z"
+        },
+        {
           "title": "Palak added 'The Fourth Option'",
           "url": "https://www.goodreads.com/review/show/9008174419",
           "published": "2026-10-17T04:29:37Z"
@@ -62,11 +67,6 @@
           "title": "Palak is currently reading 'DevOps Automation Cookbook: Harness the power of DevOps with 125+ automation recipes'",
           "url": "https://www.goodreads.com/review/show/9023240401",
           "published": "2026-10-13T19:15:20Z"
-        },
-        {
-          "title": "Palak finished reading 'Kidnapped'",
-          "url": "https://www.goodreads.com/review/show/9010657084",
-          "published": "2026-10-09T00:26:12Z"
         }
       ]
     }
