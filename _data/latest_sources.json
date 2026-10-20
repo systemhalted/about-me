@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T07:48:11Z",
+  "updated_at": "2026-10-20T07:35:57Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed",
       "items": [
+        {
+          "title": "Asha Ji, Lata Ji, and the Memories They Bring Back",
+          "url": "https://systemhalted.in/2026/10/19/asha-bhosle/",
+          "published": "2026-10-19T00:00:00Z"
+        },
         {
           "title": "Knowing of Something and Knowing Something",
           "url": "https://systemhalted.in/2026/10/18/knowing/",
@@ -16,11 +21,6 @@
           "title": "FFI and Miscompilation Bug in Rust",
           "url": "https://systemhalted.in/2026/10/16/bool-ffi-miscompilation/",
           "published": "2026-10-16T00:00:00Z"
-        },
-        {
-          "title": "teeup Beta is now available",
-          "url": "https://systemhalted.in/2026/10/10/teeup-sh-beta-release/",
-          "published": "2026-10-10T00:00:00Z"
         }
       ]
     },
