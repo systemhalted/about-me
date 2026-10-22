@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T07:40:33Z",
+  "updated_at": "2026-10-22T07:36:23Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -7,6 +7,11 @@
       "url": "https://systemhalted.in",
       "feed_url": "https://systemhalted.in/feed",
       "items": [
+        {
+          "title": "Teacher and Family Bonds",
+          "url": "https://systemhalted.in/2026/10/21/teacher-and-family-bonds/",
+          "published": "2026-10-21T00:00:00Z"
+        },
         {
           "title": "What We Lose When We Stop Practicing",
           "url": "https://systemhalted.in/2026/10/20/what-we-lose-when-we-stop-practicing/",
@@ -16,11 +21,6 @@
           "title": "Sold My Toyota RAV4",
           "url": "https://systemhalted.in/2026/10/20/sold-rav4/",
           "published": "2026-10-20T00:00:00Z"
-        },
-        {
-          "title": "Asha Ji, Lata Ji, and the Memories They Bring Back",
-          "url": "https://systemhalted.in/2026/10/19/asha-bhosle/",
-          "published": "2026-10-19T00:00:00Z"
         }
       ]
     },
