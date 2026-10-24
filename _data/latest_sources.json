@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T07:33:39Z",
+  "updated_at": "2026-10-24T07:18:20Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -54,19 +54,19 @@
       "feed_url": "https://www.goodreads.com/user/updates_rss/1863824",
       "items": [
         {
+          "title": "Palak finished reading 'DevOps Automation Cookbook: Harness the power of DevOps with 125+ automation recipes'",
+          "url": "https://www.goodreads.com/review/show/9023240401",
+          "published": "2026-10-24T06:25:44Z"
+        },
+        {
+          "title": "Palak finished reading 'The Crossover'",
+          "url": "https://www.goodreads.com/review/show/9049017652",
+          "published": "2026-10-23T22:28:32Z"
+        },
+        {
           "title": "Palak is currently reading 'The Black Orchid'",
           "url": "https://www.goodreads.com/review/show/9036686355",
           "published": "2026-10-19T01:18:10Z"
-        },
-        {
-          "title": "Palak added 'The Fourth Option'",
-          "url": "https://www.goodreads.com/review/show/9008174419",
-          "published": "2026-10-17T04:29:37Z"
-        },
-        {
-          "title": "Palak is currently reading 'DevOps Automation Cookbook: Harness the power of DevOps with 125+ automation recipes'",
-          "url": "https://www.goodreads.com/review/show/9023240401",
-          "published": "2026-10-13T19:15:20Z"
         }
       ]
     }
