@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T08:30:04Z",
+  "updated_at": "2026-10-30T08:40:06Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -8,6 +8,11 @@
       "feed_url": "https://systemhalted.in/feed",
       "items": [
         {
+          "title": "When Life Was Simple",
+          "url": "https://systemhalted.in/2026/10/29/when-life-was-simple/",
+          "published": "2026-10-29T00:00:00Z"
+        },
+        {
           "title": "Teacher and Family Bonds",
           "url": "https://systemhalted.in/2026/10/21/teacher-and-family-bonds/",
           "published": "2026-10-21T00:00:00Z"
@@ -15,11 +20,6 @@
         {
           "title": "What We Lose When We Stop Practicing",
           "url": "https://systemhalted.in/2026/10/20/what-we-lose-when-we-stop-practicing/",
-          "published": "2026-10-20T00:00:00Z"
-        },
-        {
-          "title": "Sold My Toyota RAV4",
-          "url": "https://systemhalted.in/2026/10/20/sold-rav4/",
           "published": "2026-10-20T00:00:00Z"
         }
       ]
