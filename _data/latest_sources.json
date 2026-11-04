@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T09:33:52Z",
+  "updated_at": "2026-11-04T09:14:25Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -8,19 +8,19 @@
       "feed_url": "https://systemhalted.in/feed",
       "items": [
         {
+          "title": "How I Publish My Blog",
+          "url": "https://systemhalted.in/2026/11/04/how-i-publish-my-blog/",
+          "published": "2026-11-04T00:00:00Z"
+        },
+        {
+          "title": "Twenty-One Years Ago Feels Like Yesterday",
+          "url": "https://systemhalted.in/2026/11/03/twenty-one-years-ago-feels-like-yesterday/",
+          "published": "2026-11-03T00:00:00Z"
+        },
+        {
           "title": "When Life Was Simple",
           "url": "https://systemhalted.in/2026/10/29/when-life-was-simple/",
           "published": "2026-10-29T00:00:00Z"
-        },
-        {
-          "title": "Teacher and Family Bonds",
-          "url": "https://systemhalted.in/2026/10/21/teacher-and-family-bonds/",
-          "published": "2026-10-21T00:00:00Z"
-        },
-        {
-          "title": "What We Lose When We Stop Practicing",
-          "url": "https://systemhalted.in/2026/10/20/what-we-lose-when-we-stop-practicing/",
-          "published": "2026-10-20T00:00:00Z"
         }
       ]
     },
