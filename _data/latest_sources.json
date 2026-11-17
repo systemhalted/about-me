@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T09:46:10Z",
+  "updated_at": "2026-11-17T10:44:43Z",
   "sources": [
     {
       "id": "systemhalted",
@@ -31,6 +31,11 @@
       "feed_url": "https://palakmathur.substack.com/feed",
       "items": [
         {
+          "title": "\u0915\u093f\u0938\u0915\u0940 \u0924\u0932\u092c",
+          "url": "https://palakmathur.substack.com/p/bcb",
+          "published": "2026-08-10T05:20:33Z"
+        },
+        {
           "title": "Glass and Silence",
           "url": "https://palakmathur.substack.com/p/glass-and-silence",
           "published": "2025-12-27T19:15:04Z"
@@ -39,11 +44,6 @@
           "title": "Checksum Failure",
           "url": "https://palakmathur.substack.com/p/checksum-failure",
           "published": "2025-12-05T05:12:14Z"
-        },
-        {
-          "title": "\u092b\u0942\u0932\u094b\u0902 \u0915\u093e \u0921\u0930",
-          "url": "https://palakmathur.substack.com/p/4fc",
-          "published": "2025-10-25T04:04:00Z"
         }
       ]
     },
