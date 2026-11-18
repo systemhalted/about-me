@@ -1,4 +1,4 @@
-window.substackDocsUpdatedAt = "2026-11-17T10:44:43Z";
+window.substackDocsUpdatedAt = "2026-11-18T10:11:37Z";
 window.substackDocs = [
   {
     "id": "substack-https://palakmathur.substack.com/p/bcb",
